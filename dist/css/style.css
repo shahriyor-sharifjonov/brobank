@@ -993,14 +993,24 @@ button {
   }
 }
 
-@media (max-width: 359px) {
-  .filter__show-badge {
-    display: none;
+@media (max-width: 390px) {
+  .filter__header {
+    margin-bottom: 15px;
+  }
+
+  .filter__wrap {
+    row-gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .filter__item {
+    width: 100%;
+    row-gap: 5px;
   }
 }
 
-@media (max-width: 332px) {
-  .filter__item-label {
-    font-size: 12px;
+@media (max-width: 359px) {
+  .filter__show-badge {
+    display: none;
   }
 }
