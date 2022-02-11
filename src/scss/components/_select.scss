@@ -18,6 +18,15 @@
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 40px;
+    transition: 200ms ease;
+    &:hover{
+      background: #F5F8FA;
+    }
+    @include media(576){
+      padding: 11px 30px 11px 10px;
+      font-size: 15px;
+      line-height: 18px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -29,6 +38,10 @@
       background: url("../img/dropdown.svg") 100% 100%;
       pointer-events: none;
       transition: 200ms ease;
+      @include media(576){
+        width: 11px;
+        background-size: 100% 100%;
+      }
     }
     &_active{
       &::after{
@@ -73,6 +86,17 @@
     opacity: 0;
     visibility: hidden;
     transition: 200ms ease;
+    &.large-sm{
+      min-width: 215px;
+      &.left{
+        right: auto;
+        left: 0;
+      }
+      &.right{
+        right: 0;
+        left: auto;
+      }
+    }
     &_visible{
       opacity: 1;
       visibility: visible;
@@ -96,7 +120,7 @@
   }
   &__input{
     &_hidden{
-      display: none;
+      display: none;  
     }
   }
 }
@@ -121,6 +145,15 @@
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 40px;
+    transition: 200ms ease;
+    &:hover{
+      background: #F5F8FA;
+    }
+    @include media(576){
+      padding: 11px 30px 11px 10px;
+      font-size: 15px;
+      line-height: 18px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -132,6 +165,10 @@
       background: url("../img/dropdown.svg") 100% 100%;
       pointer-events: none;
       transition: 200ms ease;
+      @include media(576){
+        width: 11px;
+        background-size: 100% 100%;
+      }
     }
     &_active{
       &::after{
@@ -156,6 +193,11 @@
     opacity: 0;
     visibility: hidden;
     transition: 200ms ease;
+    @include media(576){
+      min-width: 215px;
+      right: 0;
+      left: auto;
+    }
     &_visible{
       opacity: 1;
       visibility: visible;
@@ -219,6 +261,11 @@
   border-radius: 4px;
   height: 50px;
   padding: 10px 15px;
+  @include media(576){
+    padding: 11px 10px 11px 10px;
+    font-size: 15px;
+    line-height: 18px;
+  }
   &::placeholder{
     color: #88919D;
     opacity: 0.5;

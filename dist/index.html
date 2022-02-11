@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20220211134430">
-    <link rel="stylesheet" href="css/style.min.css?_v=20220211134430">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20220211153950">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220211153950">
     <title>ТОП 10: Кредитные карты без отказа с мгновенным решением онлайн, 38 предложений</title>
   </head>
   <body> 
@@ -55,7 +55,7 @@
                   </div>
                   <div class="filter">
                     <div class="filter__buttons">
-                      <button class="filter__show" type="button"> <img class="filter__show-img" src="img/settings.svg" alt="" draggable="false" width="18px" height="18px"><span class="filter__show-text">Фильтры</span><span class="filter__show-badge">3</span></button>
+                      <button class="filter__show active" type="button"> <img class="filter__show-img" src="img/settings.svg" alt="" draggable="false" width="18px" height="18px"><span class="filter__show-text">Фильтры</span><span class="filter__show-badge">3</span></button>
                       <div class="dropdown filter__dropdown">
                         <button class="dropdown__button dropdown__button_sm-static" type="button" data-default="Сортировка">Сортировка</button>
                         <ul class="dropdown__list"> 
@@ -69,7 +69,7 @@
                         <input class="dropdown__input_hidden" type="text" name="select-category" value="">
                       </div>
                     </div>
-                    <div class="filter__content">
+                    <div class="filter__content active">
                       <div class="filter__header">
                         <p class="filter__title">Фильтры</p>
                         <button class="filter__reset" type="button">Сбросить</button>
@@ -82,23 +82,23 @@
                         <div class="filter__item"> 
                           <label class="filter__item-label" for="period">Льготный период</label>
                           <div class="dropdown filter__item-dropdown">
-                            <button class="dropdown__button" type="button" id="period">До 100 дней</button>
-                            <ul class="dropdown__list"> 
+                            <button class="dropdown__button" type="button" id="period" data-default="До 100 дней">До 100 дней</button>
+                            <ul class="dropdown__list large-sm right"> 
                               <li class="dropdown__list-item" data-value="Любой">Любой</li>
-                              <li class="dropdown__list-item dropdown__list-item_active" data-value="до 100 дней">до 100 дней</li>
+                              <li class="dropdown__list-item dropdown__list-item_active default" data-value="до 100 дней">до 100 дней</li>
                               <li class="dropdown__list-item" data-value="от 100 до 200 дней">от 100 до 200 дней</li>
                               <li class="dropdown__list-item" data-value="более 200 дней">более 200 дней</li>
                             </ul>
                             <input class="dropdown__input_hidden" type="text" name="period" value="">
                           </div>
                         </div>
-                        <div class="filter__item"> 
+                        <div class="filter__item">
                           <label class="filter__item-label" for="bank">Банк</label>
                           <div class="dropdown filter__item-dropdown">
-                            <button class="dropdown__button" type="button" id="bank">Любой</button>
-                            <div class="dropdown__list"> 
+                            <button class="dropdown__button" type="button" id="bank" data-default="Любой">Любой</button>
+                            <div class="dropdown__list large-sm left"> 
                               <ul class="dropdown__list-scroll">
-                                <li class="dropdown__list-item dropdown__list-item_active" data-value="Любой">Любой</li>
+                                <li class="dropdown__list-item dropdown__list-item_active default" data-value="Любой">Любой</li>
                                 <li class="dropdown__list-item" data-value="Альфабанк">Альфабанк</li>
                                 <li class="dropdown__list-item" data-value="Быстробанк">Быстробанк</li>
                                 <li class="dropdown__list-item" data-value="ВТБ Банк">ВТБ Банк</li>
@@ -124,12 +124,12 @@
                             <input class="dropdown__input_hidden" type="text" name="bank" value="">
                           </div>
                         </div>
-                        <div class="filter__item"> 
+                        <div class="filter__item">
                           <label class="filter__item-label" for="delivery">Доставка</label>
                           <div class="dropdown filter__item-dropdown">
-                            <button class="dropdown__button" type="button" id="delivery">На дом</button>
-                            <ul class="dropdown__list"> 
-                              <li class="dropdown__list-item dropdown__list-item_active" data-value="На дом">На дом</li>
+                            <button class="dropdown__button" type="button" id="delivery" data-default="На дом">На дом</button>
+                            <ul class="dropdown__list large-sm right">
+                              <li class="dropdown__list-item dropdown__list-item_active default" data-value="На дом">На дом</li>
                               <li class="dropdown__list-item" data-value="Курьером">Курьером</li>
                               <li class="dropdown__list-item" data-value="По почте">По почте</li>
                               <li class="dropdown__list-item" data-value="В отделение банка">В отделение банка</li>
@@ -141,9 +141,9 @@
                         <div class="filter__item"> 
                           <label class="filter__item-label" for="payment">Платежная система</label>
                           <div class="dropdown filter__item-dropdown">
-                            <button class="dropdown__button" type="button" id="payment">Любая</button>
+                            <button class="dropdown__button" type="button" id="payment" data-default="Любая">Любая</button>
                             <ul class="dropdown__list"> 
-                              <li class="dropdown__list-item dropdown__list-item_active" data-value="Любая">Любая</li>
+                              <li class="dropdown__list-item dropdown__list-item_active default" data-value="Любая">Любая</li>
                               <li class="dropdown__list-item" data-value="Visa">Visa</li>
                               <li class="dropdown__list-item" data-value="Mastercard">Mastercard</li>
                               <li class="dropdown__list-item" data-value="МИР">МИР</li>
@@ -152,9 +152,9 @@
                           </div>
                         </div>
                         <div class="filter__item"> 
-                          <label class="filter__item-label" for="terms">Дополнительные условия</label>
+                          <label class="filter__item-label sm-change" for="terms" data-sm-value="Еще условия" data-value="Дополнительные условия">Дополнительные условия</label>
                           <div class="dropdown_with-chk filter__item-dropdown">
-                            <button class="dropdown_with-chk__button" type="button" id="terms" data-sm-value="Выберите">Выберите из списка</button>
+                            <button class="dropdown_with-chk__button sm-change" type="button" id="terms" data-sm-value="Выберите" data-value="Выберите из списка" data-default="Выберите из списка">Выберите из списка</button>
                             <ul class="dropdown_with-chk__list">
                               <li class="dropdown_with-chk__list-item"> 
                                 <input class="dropdown_with-chk__list-item_label" type="checkbox" name="i-1" id="i-1">
@@ -176,12 +176,16 @@
                           </div>
                         </div>
                       </div>
+                      <button class="filter__btn" type="button">Показать 134 предложения </button>
                     </div>
+                  </div>
+                  <div class="products"> 
+                    <div class="products__item">  </div>
                   </div>
                 </div>
               </div>
             </main>
     </div>
-    <script src="js/app.min.js?_v=20220211134430"> </script>
+    <script src="js/app.min.js?_v=20220211153950"> </script>
   </body>
 </html>

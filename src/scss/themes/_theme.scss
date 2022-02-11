@@ -107,6 +107,9 @@ button{
         color: #444444;
         cursor: pointer;
         transition: 200ms ease;
+        &:hover{
+            background: #E6EAED;
+        }
         @include media(576){
             padding: 8px 10px;
             font-size: 13px;
@@ -143,6 +146,17 @@ button{
         box-sizing: border-box;
         border-radius: 4px;
         padding: 11px 11px;
+        transition: 200ms ease;
+        &:hover{
+          background: #F5F8FA;
+        }
+        &.active{
+            background: #E8F1F7;
+            .filter__show-text{
+                color: #176EAE;
+                font-weight: bold;
+            }
+        }
         @include media(470){
             width: 50%;
         }
@@ -187,6 +201,10 @@ button{
         box-shadow: 0px 5px 5px rgba(136, 145, 157, 0.1);
         border-radius: 8px;
         padding: 30px 40px;
+        display: none;
+        &.active{
+            display: block;
+        }
         @include media(576){
             padding: 20px;
         }
@@ -210,8 +228,11 @@ button{
     &__reset{
         font-size: 15px;
         line-height: 18px;
-        color: #88919D;    
-        margin-bottom: 20px; 
+        color: #88919D;
+        transition: 200ms ease;
+        &:hover{
+            color: #444444;
+        }
         @include media(576){
             font-size: 13px;
             line-height: 15px;
@@ -222,6 +243,7 @@ button{
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 30px;
+        margin-bottom: 20px;
         @include media(576){
             column-gap: 15px;
             row-gap: 20px;        
@@ -246,6 +268,32 @@ button{
                 font-size: 13px;
                 line-height: 15px;
             }
+            @include media(332){
+                font-size: 12px;
+            }
+        }
+    }
+    &__btn{
+        padding: 16px 32px;
+        background: #FEDD2E;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #000000;
+        transition: 200ms ease;
+        &:hover{
+            background: #FDCE1B;
+        }
+        @include media(576){
+            padding: 16px 20px;
+            font-size: 15px;
+            line-height: 18px;
+            width: 100%;
         }
     }
 }

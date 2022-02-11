@@ -107,7 +107,7 @@ document.querySelectorAll('.dropdown_with-chk').forEach(function (dropdownWrappe
   }) 
 })
 
-document.querySelectorAll('.info').forEach(function (e) {
+document.querySelectorAll('.info').forEach(function ( e ) {
   const infoBtn = e.querySelector('.info__expand');
   infoBtn.addEventListener('click', function (btn) {
     const info = btn.target.parentElement;
@@ -121,8 +121,54 @@ document.querySelectorAll('.info').forEach(function (e) {
   })
 })
 
-document.querySelectorAll('.categories__item').forEach(function (e) {
+document.querySelectorAll('.categories__item').forEach(function ( e ) {
   e.addEventListener('click', function (e) {
     e.target.classList.toggle('categories__item_active');
   })
+})
+
+document.querySelectorAll('.sm-change').forEach(function ( e ) {
+  window.addEventListener('resize', changeValue)
+  window.addEventListener('DOMContentLoaded', changeValue)
+  function changeValue () {
+    if (window.innerWidth <= 576){
+      e.innerText = e.getAttribute('data-sm-value');
+    }else{
+      e.innerText = e.getAttribute('data-value');
+    }
+  }
+})
+
+document.querySelectorAll('.filter').forEach(function ( ) {
+  const filter = document.querySelector('.filter__content');
+  const filterBtn = filter.querySelector('.filter__reset');
+  const filterItems = filter.querySelectorAll('.dropdown__list-item');
+  const filterDropdown = filter.querySelectorAll('.dropdown__button');
+  const filterInputs = filter.querySelectorAll('.dropdown__input_hidden');
+  const filterChecks = filter.querySelectorAll('.dropdown_with-chk__list-item_label');
+  filterBtn.addEventListener('click', function () {
+    filter.querySelector('.filter__item-input').value = "";
+    filterDropdown.forEach(function (el) {
+      el.innerText = el.getAttribute('data-default');
+    })
+    filterItems.forEach(function (el) {
+      el.classList.remove('dropdown__list-item_active');
+      if ( el.classList.contains('default') ) {
+        el.classList.add('dropdown__list-item_active');
+      }
+    })
+    filterInputs.forEach(function (el) {
+      el.value = "";
+    })
+    filterChecks.forEach(function (el) {
+      el.checked = false;
+      el.classList.remove('dropdown_with-chk__list-item_active');
+    })
+  })
+})
+
+document.querySelector('.filter__show').addEventListener('click', function (  ) {
+  document.querySelector('.filter__show').classList.toggle('active');
+  const filter = document.querySelector('.filter__content');
+  filter.classList.toggle('active');
 })

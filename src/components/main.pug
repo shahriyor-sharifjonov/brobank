@@ -32,7 +32,7 @@ mixin main()
                 p.categories__item-p Онлайн
         .filter
           .filter__buttons
-            button(type='button').filter__show 
+            button(type='button').filter__show.active 
               img(src="@img/settings.svg", alt="" draggable="false" width="18px" height="18px").filter__show-img 
               span.filter__show-text Фильтры
               span.filter__show-badge 3
@@ -46,7 +46,7 @@ mixin main()
                 li.dropdown__list-item(data-value="По льготному периоду") По льготному периоду
                 li.dropdown__list-item(data-value="По процентной ставке ") По процентной ставке 
               input(type="text" name="select-category" value="").dropdown__input_hidden 
-          .filter__content
+          .filter__content.active
             .filter__header
               p.filter__title Фильтры
               button(type="button").filter__reset Сбросить
@@ -57,20 +57,20 @@ mixin main()
               .filter__item 
                 label(for="period").filter__item-label Льготный период
                 .dropdown.filter__item-dropdown
-                  button(type='button' id="period").dropdown__button До 100 дней
-                  ul.dropdown__list 
+                  button(type='button' id="period" data-default="До 100 дней").dropdown__button До 100 дней
+                  ul.dropdown__list.large-sm.right  
                     li.dropdown__list-item(data-value="Любой") Любой
-                    li.dropdown__list-item.dropdown__list-item_active(data-value="до 100 дней") до 100 дней
+                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="до 100 дней") до 100 дней
                     li.dropdown__list-item(data-value="от 100 до 200 дней") от 100 до 200 дней
                     li.dropdown__list-item(data-value="более 200 дней") более 200 дней
                   input(type="text" name="period" value="").dropdown__input_hidden 
-              .filter__item 
+              .filter__item
                 label(for="bank").filter__item-label Банк
                 .dropdown.filter__item-dropdown
-                  button(type='button' id="bank").dropdown__button Любой
-                  .dropdown__list 
+                  button(type='button' id="bank" data-default="Любой").dropdown__button Любой
+                  .dropdown__list.large-sm.left 
                     ul.dropdown__list-scroll
-                      li.dropdown__list-item.dropdown__list-item_active(data-value="Любой") Любой
+                      li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любой") Любой
                       li.dropdown__list-item(data-value="Альфабанк") Альфабанк
                       li.dropdown__list-item(data-value="Быстробанк") Быстробанк
                       li.dropdown__list-item(data-value="ВТБ Банк") ВТБ Банк
@@ -92,12 +92,12 @@ mixin main()
                       li.dropdown__list-item(data-value="Экскобанк") Экскобанк
                       li.dropdown__list-item(data-value="ЮниКредит Банк") ЮниКредит Банк
                   input(type="text" name="bank" value="").dropdown__input_hidden 
-              .filter__item 
+              .filter__item
                 label(for="delivery").filter__item-label Доставка
                 .dropdown.filter__item-dropdown
-                  button(type='button' id="delivery").dropdown__button На дом
-                  ul.dropdown__list 
-                    li.dropdown__list-item.dropdown__list-item_active(data-value="На дом") На дом
+                  button(type='button' id="delivery" data-default="На дом").dropdown__button На дом
+                  ul.dropdown__list.large-sm.right
+                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="На дом") На дом
                     li.dropdown__list-item(data-value="Курьером") Курьером
                     li.dropdown__list-item(data-value="По почте") По почте
                     li.dropdown__list-item(data-value="В отделение банка") В отделение банка
@@ -106,17 +106,17 @@ mixin main()
               .filter__item 
                 label(for="payment").filter__item-label Платежная система
                 .dropdown.filter__item-dropdown
-                  button(type='button' id="payment").dropdown__button Любая
+                  button(type='button' id="payment" data-default="Любая").dropdown__button Любая
                   ul.dropdown__list 
-                    li.dropdown__list-item.dropdown__list-item_active(data-value="Любая") Любая
+                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любая") Любая
                     li.dropdown__list-item(data-value="Visa") Visa
                     li.dropdown__list-item(data-value="Mastercard") Mastercard
                     li.dropdown__list-item(data-value="МИР") МИР
                   input(type="text" name="payment" value="").dropdown__input_hidden          
               .filter__item 
-                label(for="terms").filter__item-label Дополнительные условия
+                label(for="terms" data-sm-value="Еще условия" data-value="Дополнительные условия").filter__item-label.sm-change Дополнительные условия
                 .dropdown_with-chk.filter__item-dropdown
-                  button(type='button' id="terms" data-sm-value="Выберите").dropdown_with-chk__button Выберите из списка
+                  button(type='button' id="terms" data-sm-value="Выберите" data-value="Выберите из списка" data-default="Выберите из списка").dropdown_with-chk__button.sm-change Выберите из списка
                   ul.dropdown_with-chk__list
                     li.dropdown_with-chk__list-item 
                       input(type="checkbox", name="i-1" id="i-1").dropdown_with-chk__list-item_label
@@ -130,3 +130,7 @@ mixin main()
                     li.dropdown_with-chk__list-item 
                       input(type="checkbox", name="i-4" id="i-4").dropdown_with-chk__list-item_label
                       label(for="i-4").dropdown_with-chk__list-item_label Бесплатное обслуживание
+            button(type='button').filter__btn Показать 134 предложения 
+        .products 
+          .products__item   
+            
