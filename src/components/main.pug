@@ -115,4 +115,18 @@ mixin main()
                   input(type="text" name="payment" value="").dropdown__input_hidden          
               .filter__item 
                 label(for="terms").filter__item-label Дополнительные условия
-                        
+                .dropdown_with-chk.filter__item-dropdown
+                  button(type='button' id="terms" data-sm-value="Выберите").dropdown_with-chk__button Выберите из списка
+                  ul.dropdown_with-chk__list
+                    li.dropdown_with-chk__list-item 
+                      input(type="checkbox", name="i-1" id="i-1").dropdown_with-chk__list-item_label
+                      label(for="i-1").dropdown_with-chk__list-item_label Без справок о доходе
+                    li.dropdown_with-chk__list-item 
+                      input(type="checkbox", name="i-2" id="i-2").dropdown_with-chk__list-item_label
+                      label(for="i-2").dropdown_with-chk__list-item_label Бесплатное снятие наличных
+                    li.dropdown_with-chk__list-item 
+                      input(type="checkbox", name="i-3" id="i-3").dropdown_with-chk__list-item_label
+                      label(for="i-3").dropdown_with-chk__list-item_label С кэшбэком
+                    li.dropdown_with-chk__list-item 
+                      input(type="checkbox", name="i-4" id="i-4").dropdown_with-chk__list-item_label
+                      label(for="i-4").dropdown_with-chk__list-item_label Бесплатное обслуживание
