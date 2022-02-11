@@ -1,0 +1,14 @@
+.title{
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #000000;    
+    @include media(576){
+        font-size: 21px;
+        line-height: 140%;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,36 @@
+input[type="checkbox"]{
+    appearance: none;
+    position: relative;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #E6EAED;
+    transition: 600ms ease;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url('../img/check.svg') 100% 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: 300ms ease;
+    }
+    &:checked{
+        background: #FEDD2E;
+        border: 1px solid #FEDD2E;
+        transition: 300ms ease;
+        &::after{
+            opacity: 1;
+            visibility: visible;
+            transition: 600ms ease;
+        }
+    }
+}
