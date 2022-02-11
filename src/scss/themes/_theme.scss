@@ -38,6 +38,61 @@ button{
     cursor: pointer;
 }
 
+.tooltip{
+    position: relative;
+    &:hover{
+        .tooltip__content{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__btn{
+        height: 24px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 15px;
+        color: #88919D;
+        padding: 4px 10px;
+        background: #F5F8FA;
+        border-radius: 12px;
+        &:hover{
+            background: #E6EAED;
+        }
+    }
+    &__content{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: 34px;
+        max-width: 270px;
+        width: max-content;
+        background: #FFFFFF; 
+        border: 1px solid #E6EAED;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(136, 145, 157, 0.3);
+        border-radius: 4px;
+        padding: 15px;
+        font-size: 13px;
+        line-height: 140%;
+        color: #444444;
+        transition: 200ms ease;
+        &::after{
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+        }
+        a{
+            color: #528CAA;
+            text-decoration: none;
+        }
+    }
+}
+
 .info{
     margin-bottom: 20px;
     &.expanded{
@@ -202,6 +257,7 @@ button{
         border-radius: 8px;
         padding: 30px 40px;
         display: none;
+        margin-bottom: 30px;
         &.active{
             display: block;
         }
@@ -302,6 +358,49 @@ button{
             font-size: 15px;
             line-height: 18px;
             width: 100%;
+        }
+    }
+}
+
+.products{
+    &__item{
+        background: #FFFFFF;
+        border: 1px solid #E6EAED;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 5px rgba(136, 145, 157, 0.1);
+        border-radius: 8px;
+        padding: 30px 40px;
+        @include media(576){
+            padding: 20px;
+        }
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        &-title{
+            font-weight: bold;
+            font-size: 23px;
+            line-height: 140%;
+            color: #176EAE;
+            transition: 200ms ease;
+            a{
+                font-weight: bold;
+                font-size: 23px;
+                line-height: 140%;
+                color: #176EAE;
+                transition: 200ms ease; 
+                text-decoration: none;
+                &:hover{
+                    color: #0E4268;
+                }
+            }
+            &:hover{
+                color: #0E4268;
+            }
+        }
+        &-category{
         }
     }
 }

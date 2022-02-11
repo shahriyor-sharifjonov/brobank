@@ -132,5 +132,16 @@ mixin main()
                       label(for="i-4").dropdown_with-chk__list-item_label Бесплатное обслуживание
             button(type='button').filter__btn Показать 134 предложения 
         .products 
-          .products__item   
-            
+          article.products__item   
+            .products__item-header 
+              h1.products__item-title  
+                a(href="#!") Кредитная карта МТС Деньги Zero
+              .products__item-category.tooltip 
+                button(type="button").tooltip__btn.products__item-category__btn Партнерский
+                .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+            .products__item-content 
+              .products__item-img 
+                img(src="@img/product-1.png", alt="" draggable="false")
+              .products__item-row 
+                .products__item-col
+                .products__item-col
