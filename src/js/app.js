@@ -172,3 +172,28 @@ document.querySelector('.filter__show').addEventListener('click', function (  ) 
   const filter = document.querySelector('.filter__content');
   filter.classList.toggle('active');
 })
+
+document.querySelectorAll('.products__item').forEach(function ( el ) {
+  const btn = el.querySelector('.products__item-expand');
+  const content = el.querySelector('.products__item-content');
+  const contentBtn = el.querySelectorAll('.products__item-content__btn');
+  const items = el.querySelectorAll('.products__item-content__item');
+  btn.addEventListener('click', function (  ) {
+    btn.classList.toggle('active');
+    content.classList.toggle('active');
+  })
+  contentBtn.forEach(function ( el ) {
+    el.addEventListener('click', function (  ) {
+      contentBtn.forEach(function ( el ) {
+        el.classList.remove('active');
+      })
+      items.forEach(function ( el ) {
+        el.classList.remove('active');
+      })
+      el.classList.add('active'); 
+      const dataTarget = el.getAttribute('data-target');
+      const target = content.querySelector('#'+dataTarget);
+      target.classList.add('active');
+    })
+  })
+})
