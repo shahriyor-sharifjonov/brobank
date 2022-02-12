@@ -1,7 +1,7 @@
 mixin main()
   main.main 
-    .container
-      h1.title Кредитные карты без отказа
+    .container 
+      h1.title Кредитные карты без отказа 
       .info 
         p.info__p Многие клиенты сталкиваются с трудностями оформления банковской карты из-за плохой кредитной истории или отсутствия справки подтверждающей платежеспособность. Решение этой проблемы есть, так как существует возможность взять кредитную карту без отказа. Так как существует возможность взять кредитную карту без отказа. 
         button(type="button").info__expand 
@@ -624,7 +624,218 @@ mixin main()
         .reviews__slider.swiper 
           .reviews__wrapper.swiper-wrapper  
             .reviews__item.swiper-slide 
-              .reivews__item-header 
+              .reviews__item-header 
                 img(src="@img/reviews-1.png", alt="" draggable="false").reviews__item-img
                 p Санкт-Петербург Банк
+              p.reviews__item-title Кредитка - это не всегда про выплату процентов
+              p.reviews__item-author Игнатьев Виталий
+              .reviews__item-row
+                .reviews__item-star 
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  p 4 из 5
+                p(data-sm-value="01.09.2021 в 12:05" data-value="01.09.2021").reviews__item-date.sm-change 01.09.2021
+              p.reviews__item-p Если открыть кредитную карту по хорошему предложению - то можно экономить на своих покупках. Раньше я считала, что кредитка - это по сути кредит, что ты всегда должен банку проценты, но оказывается это не так. У банка С-Пб есть карты с разным льготным периодом... <a href="#!">Показать полностью</a>
+            .reviews__item.swiper-slide 
+              .reviews__item-header 
+                img(src="@img/reviews-2.png", alt="" draggable="false").reviews__item-img
+                p ОТП Банк
+              p.reviews__item-title Проблемы с кредитной картой ОТП из-за самоизоляции
+              p.reviews__item-author Морозов Антон
+              .reviews__item-row
+                .reviews__item-star 
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  p 1 из 5
+                p(data-sm-value="01.09.2021 в 12:05" data-value="01.09.2021").reviews__item-date.sm-change 01.09.2021
+              p.reviews__item-p Как ОТП банк будет учитывать форс-мажор с самоизоляцией. Льготный период для карты закончился 11.04.2020. Возможности аннулировать карту не было так как офис был закрыт. Картой не пользовались. 11.04 списано 1640 за "юридические услуги".
+            .reviews__item.swiper-slide 
+              .reviews__item-header 
+                img(src="@img/reviews-3.png", alt="" draggable="false").reviews__item-img
+                p Росбанк
+              p.reviews__item-title Карта помогает, когда срочно нужны деньги
+              p.reviews__item-author Яблокова Елена
+              .reviews__item-row
+                .reviews__item-star 
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  p 3 из 5
+                p(data-sm-value="01.09.2021 в 12:05" data-value="01.09.2021").reviews__item-date.sm-change 01.09.2021
+              p.reviews__item-p Делал кредитную карту МожноВсе в Росбанке в питерском офисе на проспекте Просвещения. Отмечу вежливое и быстрое обслуживание сотрудников банка. Условия по этой кредитке приемлемые: беспроцентный период два месяца, лимит до 1000000 ... <a href="#!">Показать полностью</a>
+            .reviews__item.swiper-slide 
+              .reviews__item-header 
+                img(src="@img/reviews-1.png", alt="" draggable="false").reviews__item-img
+                p Санкт-Петербург Банк
+              p.reviews__item-title Кредитка - это не всегда про выплату процентов
+              p.reviews__item-author Игнатьев Виталий
+              .reviews__item-row
+                .reviews__item-star 
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star.svg", alt="" draggable="false")
+                  img(src="@img/star-bad.svg", alt="" draggable="false")
+                  p 4 из 5
+                p(data-sm-value="01.09.2021 в 12:05" data-value="01.09.2021").reviews__item-date.sm-change 01.09.2021
+              p.reviews__item-p Если открыть кредитную карту по хорошему предложению - то можно экономить на своих покупках. Раньше я считала, что кредитка - это по сути кредит, что ты всегда должен банку проценты, но оказывается это не так. У банка С-Пб есть карты с разным льготным периодом... <a href="#!">Показать полностью</a>
         a(href="#!").reviews__link.mobile Показать все
+      .reviews
+        .reviews__header 
+          h2.reviews__title.section-title Вопросы про кредитные карты
+          a(href="#!").reviews__link.desktop Задать вопрос
+        .reviews__slider.swiper 
+          .reviews__wrapper.swiper-wrapper  
+            .reviews__item.quest__item.swiper-slide 
+              img(src="@img/quest-1.png", alt="").reviews__thumb
+              p.reviews__item-title Может ли Тинькофф Платинум испортить кредитную историю?
+              .reviews__item-row
+                p.reviews__item-date 01.03.19 в 12:05
+                p.reviews__item-views 
+                  img(src="@img/eye.svg", alt="" draggable="false")
+                  | 8682
+                p.reviews__item-views 
+                  img(src="@img/comment.svg", alt="" draggable="false")
+                  | 7
+              .reviews__item-answer 
+                img(src="@img/author-2.png", alt="" draggable="false")
+                .reviews__item-answer-content 
+                  b Анна Попович
+                    img(src="@img/badge-1.png", alt="").reviews__item-badge 
+                  p отвечает:
+              p.reviews__item-p.reviews__item-p_2 Добрый день. Комиссия за снятие наличных 2.9% от суммы снятия + 290 рублей. На вашем примере получается 50000*2.9%=1450+290=1740 будет спи...<a href="#!">Показать полностью</a>
+            .reviews__item.quest__item.swiper-slide 
+              img(src="@img/quest-2.png", alt="").reviews__thumb
+              p.reviews__item-title Как объединить долг по кредитным картам?
+              .reviews__item-row
+                p.reviews__item-date 01.03.19 в 12:05
+                p.reviews__item-views 
+                  img(src="@img/eye.svg", alt="" draggable="false")
+                  | 8682
+                p.reviews__item-views 
+                  img(src="@img/comment.svg", alt="" draggable="false")
+                  | 7
+              .reviews__item-answer 
+                img(src="@img/author-3.png", alt="" draggable="false")
+                .reviews__item-answer-content 
+                  b Альфа-Банк
+                    img(src="@img/badge-2.svg", alt="").reviews__item-badge 
+                  p отвечает:
+              p.reviews__item-p.reviews__item-p_2 Добрый день, Оксана!<br>По существу Вашего вопроса могу пояснить следующее.<br>Предоставление сиротам жилья осуществляется по принципу нуждаемости в жило...<a href="#!">Показать полностью</a>
+            .reviews__item.quest__item.swiper-slide 
+              img(src="@img/quest-3.png", alt="").reviews__thumb
+              p.reviews__item-title Как получить виртуальную кредитку без работы?
+              .reviews__item-row
+                p.reviews__item-date 01.03.19 в 12:05
+                p.reviews__item-views 
+                  img(src="@img/eye.svg", alt="" draggable="false")
+                  | 8682
+                p.reviews__item-views 
+                  img(src="@img/comment.svg", alt="" draggable="false")
+                  | 7
+              .reviews__item-answer 
+                img(src="@img/author-4.png", alt="" draggable="false")
+                .reviews__item-answer-content 
+                  b Анна Попович
+                    img(src="@img/badge-1.png", alt="").reviews__item-badge 
+                  p отвечает:
+              p.reviews__item-p.reviews__item-p_2 Добрый день, Оксана!<br>По существу Вашего вопроса могу пояснить следующее.<br>Предоставление сиротам жилья осуществляется по принципу нуждаемости в жило...<a href="#!">Показать полностью</a>
+            .reviews__item.quest__item.swiper-slide 
+              img(src="@img/quest-4.png", alt="").reviews__thumb
+              p.reviews__item-title Просто кредитная карта Ситибанк при временной регистрации
+              .reviews__item-row
+                p.reviews__item-date 01.03.19 в 12:05
+                p.reviews__item-views 
+                  img(src="@img/eye.svg", alt="" draggable="false")
+                  | 8682
+                p.reviews__item-views 
+                  img(src="@img/comment.svg", alt="" draggable="false")
+                  | 7
+              .reviews__item-answer 
+                img(src="@img/author-2.png", alt="" draggable="false")
+                .reviews__item-answer-content 
+                  b Анна Попович
+                    img(src="@img/badge-1.png", alt="").reviews__item-badge 
+                  p отвечает:
+              p.reviews__item-p.reviews__item-p_2 Добрый день, Оксана!<br>По существу Вашего вопроса могу пояснить следующее.<br>Предоставление сиротам жилья осуществляется по принципу нуждаемости в жило...<a href="#!">Показать полностью</a>
+
+        a(href="#!").reviews__link.mobile Задать вопрос
+      .reviews
+        .reviews__header 
+          h2.reviews__title.section-title Статьи о кредитных картах
+          a(href="#!").reviews__link.desktop Показать все
+        .reviews__slider.swiper 
+          .reviews__wrapper.swiper-wrapper  
+            .reviews__item.blog__item.swiper-slide 
+              img(src="@img/blog-1.png", alt="").reviews__thumb
+              .reviews__item-flex
+                p.reviews__item-title Тиньков Олег Юрьевич — основатель Tinkoff Bank
+                .reviews__item-row
+                  p.reviews__item-date 01.03.19 в 12:05
+                  p.reviews__item-views 
+                    img(src="@img/eye.svg", alt="" draggable="false")
+                    | 8682
+                  p.reviews__item-views 
+                    img(src="@img/comment.svg", alt="" draggable="false")
+                    | 7
+            .reviews__item.blog__item.swiper-slide 
+              img(src="@img/blog-2.png", alt="").reviews__thumb
+              .reviews__item-flex
+                p.reviews__item-title Акция Тинькофф Банка «Приведи друга»
+                .reviews__item-row
+                  p.reviews__item-date 01.03.19 в 12:05
+                  p.reviews__item-views 
+                    img(src="@img/eye.svg", alt="" draggable="false")
+                    | 8682
+                  p.reviews__item-views 
+                    img(src="@img/comment.svg", alt="" draggable="false")
+                    | 7
+            .reviews__item.blog__item.swiper-slide 
+              img(src="@img/blog-3.png", alt="").reviews__thumb
+              .reviews__item-flex
+                p.reviews__item-title Реструктуризация в Тинькофф Банке и рефинансирование: что нужно знать
+                .reviews__item-row
+                  p.reviews__item-date 01.03.19 в 12:05
+                  p.reviews__item-views 
+                    img(src="@img/eye.svg", alt="" draggable="false")
+                    | 8682
+                  p.reviews__item-views 
+                    img(src="@img/comment.svg", alt="" draggable="false")
+                    | 7
+            .reviews__item.blog__item.swiper-slide 
+              img(src="@img/blog-4.png", alt="").reviews__thumb
+              .reviews__item-flex
+                p.reviews__item-title Реструктуризация в Тинькофф Банке и рефинансирование: что нужно знать
+                .reviews__item-row
+                  p.reviews__item-date 01.03.19 в 12:05
+                  p.reviews__item-views 
+                    img(src="@img/eye.svg", alt="" draggable="false")
+                    | 8682
+                  p.reviews__item-views 
+                    img(src="@img/comment.svg", alt="" draggable="false")
+                    | 7
+
+        a(href="#!").reviews__link.mobile Показать все
+      .offer 
+        form(action="").offer__content 
+          h2.offer__title Подписка на рассылку
+          p.offer__p Самые полезные материалы для наших подписчиков
+          .offer__form
+            input(type="email" required placeholder="Введите email").offer__input.input 
+            button(type="submit").offer__btn Подписаться
+          .offer__row 
+            input(type="checkbox" checked id="email").offer__checkbox.checkbox
+            label(for="email") При подписке вы принимаете условия <a href="#!">пользовательского соглашения</a>
+        img(src="@img/offer.png", alt="").offer__img 
+
+
+
+

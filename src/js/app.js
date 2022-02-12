@@ -10,6 +10,17 @@ new Swiper(".categories", {
   spaceBetween: 10,
 });
 
+new Swiper(".reviews__slider", {
+  slidesPerView: "auto",
+  grabCursor: true,
+  spaceBetween: 10,
+  breakpoints: {
+    576: {
+      spaceBetween: 30,
+    },
+  }
+});
+
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = function (callback, thisArg) {
       thisArg = thisArg || window;
