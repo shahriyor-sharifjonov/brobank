@@ -136,12 +136,59 @@ mixin main()
             .products__item-header 
               h1.products__item-title  
                 a(href="#!") Кредитная карта МТС Деньги Zero
-              .products__item-category.tooltip 
+              .products__item-category.tooltip.desktop 
                 button(type="button").tooltip__btn.products__item-category__btn Партнерский
                 .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
             .products__item-content 
-              .products__item-img 
-                img(src="@img/product-1.png", alt="" draggable="false")
               .products__item-row 
                 .products__item-col
+                  .products__item-img 
+                    img(src="@img/product-1.png", alt="" draggable="false")
+                  .products__item-inner
+                    .products__item-top 
+                      .products__item-stars 
+                        img(src="@img/star.svg", alt="" draggable="false")
+                        img(src="@img/star.svg", alt="" draggable="false")
+                        img(src="@img/star.svg", alt="" draggable="false")
+                        img(src="@img/star.svg", alt="" draggable="false")
+                        img(src="@img/star-bad.svg", alt="" draggable="false")
+                        span 4.8
+                      a(href="#!").products__item-reviews Отзывы: 128
+                      .products__item-category.tooltip.mobile 
+                        button(type="button").tooltip__btn.products__item-category__btn Партнерский
+                        .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+                    .products__item-info 
+                      .products__item-info__item 
+                        p Кред. лимит  <span>300 000 ₽</span>
+                        p Проц. ставка   <span>От 12%</span>
+                        p Без процентов   <span>До 55 дней</span>
+                      .products__item-info__item 
+                        p Плата/мес.  <span>590 руб./год</span>
+                        p Кэшбек  <span>От 1 до 30%</span>
+                        p Решение  <span>За 10 минут</span>
+                    .products__item-categories
+                      a(href="#!").products__item-categories-item Рассрочка 0% 
+                      a(href="#!").products__item-categories-item Без оплаты за обслуживание
+                      a(href="#!").products__item-categories-item Бесплатное снятие
+                      a(href="#!").products__item-categories-item С кэшбэком
+                      a(href="#!").products__item-categories-item Срочное решение
+                      a(href="#!").products__item-categories-item Без справок о доходе
+                      a(href="#!").products__item-categories-item С 18 лет
                 .products__item-col
+                  .products__item-buttons
+                    a(href="#!").products__item-btn.primary Оформить 
+                    a(href="#!").products__item-btn Подробнее 
+                    a(href="#!").products__item-btn 
+                      img(src="@img/compare.svg", alt="" draggable="false")
+                  .products__item-right-row 
+                    div 
+                      p Альфа-Банк
+                      p Лиц. ЦБ: №1326 
+                    div 
+                      p Тел.: 8 800 2000 000
+                      p Сайт: alfabank.ru
+                  button(type="button").products__item-expand О карте
+                    <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+                    </svg>
+
