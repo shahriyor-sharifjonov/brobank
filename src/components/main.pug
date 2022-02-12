@@ -835,6 +835,116 @@ mixin main()
             input(type="checkbox" checked id="email").offer__checkbox.checkbox
             label(for="email") При подписке вы принимаете условия <a href="#!">пользовательского соглашения</a>
         img(src="@img/offer.png", alt="").offer__img 
+      .comment 
+        h2.comment__title.title Комментарии: 28
+        .comment__main
+          .comment__content 
+            .comment__item 
+              .comment__item-header
+                img(src="@img/comment-1.png", alt="").comment__item-img
+                .comment__item-header-content
+                  p.comment__item-author Александр
+                  p.comment__item-date <span>01.03.2019 в 12:05</span>
+              p.comment__item-content Здравствуйте!<br>Расскажите на примере:<br>Сколько денег будет списано за снятие 50 т.р. наличными с карты?
+              button(type='button').comment__reply Ответить
+            .comment__subitem.admin 
+              .comment__item-header
+                img(src="@img/comment-2.png", alt="").comment__item-img
+                .comment__item-header-content
+                  p.comment__item-author Анна Попович
+                    img(src="@img/badge-1.png", alt="").badge
+                  p.comment__item-date <span>01.03.2019 в 12:05</span> <span>Автор статьи</span>
+              p.comment__item-content Добрый день. Комиссия за снятие наличных 2.9% от суммы снятия + 290 рублей. На вашем примере получается 50000*2.9%=1450+290=1740 будет списана комиссия сразу во время снятия наличных. Помимо комиссии, на сумму снятия наличных начисляется иная процентная ставка, выше чем по операциям покупок. Не рекомендуем снимать наличные с кредитной карты без острой необходимости.
+              button(type='button').comment__reply Ответить
+            .comment__item.admin 
+              .comment__item-header
+                img(src="@img/comment-3.png", alt="").comment__item-img
+                .comment__item-header-content
+                  p.comment__item-author Александр
+                  p.comment__item-date <span>01.03.2019 в 12:05</span>
+              p.comment__item-content Напишите нам в комментариях если обнаружили неточность в размещенных данных или документах. Мы внесем исправления максимально быстро.
+              button(type='button').comment__reply Ответить
+            .comment__item
+              .comment__item-header
+                img(src="@img/comment-4.png", alt="").comment__item-img
+                .comment__item-header-content
+                  p.comment__item-author Александр
+                  p.comment__item-date <span>01.03.2019 в 12:05</span>
+              p.comment__item-content Мошенники и спамеры. Повелся я на хвалебные слюнявые отзывы взахлеб на профильных сайтах, дай думаю закажу сиё счастье. Ага заказал. Теперь с утра до ночи сыпется спам на телефон и почту от быстроденьги, мигом деньги и прочих шаражконтор. Подлецы и наглецы!!!
+              button(type='button').comment__reply Ответить
+          .comment__sidebar
+            .comment__sidebar-item <b>Готовые решения</b>
+            button(type='button').comment__sidebar-item Готовые решения
+            button(type='button').comment__sidebar-item Лучшие кредитные карты
+            button(type='button').comment__sidebar-item Без процентов
+            button(type='button').comment__sidebar-item Для снятия наличных
+            button(type='button').comment__sidebar-item Без справок
+            button(type='button').comment__sidebar-item С льготным периодом
+            button(type='button').comment__sidebar-item По паспорту
+            button(type='button').comment__sidebar-item Моментальное одобрение
+            button(type='button').comment__sidebar-item Без отказа
+            button(type='button').comment__sidebar-item С плохой кредитной историей
+            button(type='button').comment__sidebar-item Самые выгодные
+            button(type='button').comment__sidebar-item Не выходя из дома
+            button(type='button').comment__sidebar-item Для студентов
+            button(type='button').comment__sidebar-item Для безработных
+            button(type='button').comment__sidebar-item С любой кредитной историей
+            button(type='button').comment__sidebar-more Показать все
+              <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.104 0.482161C11.8674 0.24553 11.4837 0.24553 11.2471 0.482161L6.50497 5.22427L1.76289 0.482161C1.52626 0.24553 1.14262 0.24553 0.905989 0.482161C0.669358 0.718791 0.669358 1.10243 0.905989 1.33907L6.07653 6.50961C6.19483 6.62794 6.34993 6.68709 6.50497 6.68709C6.66001 6.68709 6.81514 6.62794 6.93344 6.50961L12.104 1.33907C12.3406 1.10243 12.3406 0.718791 12.104 0.482161Z" />
+              </svg>
+        .comment__form
+          h3.comment__form-title Ваш комментарий
+          form(action="").comment__form-content
+            label(for="text").comment__form-label Напишите комментарий
+            textarea(name="", cols="30", rows="10" required)#text.input.comment__form-textarea
+            .comment__form-row 
+              .comment__form-item 
+                label(for="name" required).comment__form-label Имя 
+                input(type="text" id="name").input.comment__input
+              .comment__form-item 
+                label(for="email2" required).comment__form-label E-mail (не будет опубликован) 
+                input(type="email" id="email2").input.comment__input
+            button(type="submit").comment__form-btn Отправить
+            .comment__form-chk 
+              input(type="checkbox", name="" checked id="chk" required).checkbox.comment__form-checkbox 
+              label(for="chk") Я принимаю условия обработки персональных данных, указанных в <a href="#!">Политике конфиденциальности</a>
+            p.comment__form-p Ваш комментарий будет опубликован на сайте сразу после проверки нашим специалистом. Мы проверяем чтобы текст не содержал оскорблений, ругательств и прочей недопустимой информации. Благодарим за понимание.
+      .share
+        .share__socials 
+          a(href="#!").share__socials-item 
+            img(src="@img/wk.png", alt="" draggable="false") 
+            | 286
+          a(href="#!").share__socials-item 
+            img(src="@img/ok.png", alt="" draggable="false") 
+            | 148
+          a(href="#!").share__socials-item 
+            img(src="@img/facebook.png", alt="" draggable="false") 
+            | 32
+          a(href="#!").share__socials-item 
+            img(src="@img/twitter.png", alt="" draggable="false") 
+            | 5
+          a(href="#!").share__socials-item 
+            img(src="@img/telegram.png", alt="" draggable="false") 
+            | 11
+          a(href="#!").share__socials-item 
+            img(src="@img/mir.png", alt="" draggable="false") 
+            | 8
+        .share__stars 
+          img(src="@img/star-bad.svg", alt="")
+          img(src="@img/star-bad.svg", alt="")
+          img(src="@img/star-bad.svg", alt="")
+          img(src="@img/star-bad.svg", alt="")
+          img(src="@img/star-bad.svg", alt="")
+          button(type='button').share__stars-btn Поставьте оценку
+      .breadcrumb
+        a(href="#!") Главная 
+        <span> - </span>
+        a(href="#!") Кредитные карты 
+        <span> - </span>
+        a(href="#!") Кредитные карты без отказа 
+
+
 
 
 
