@@ -574,6 +574,14 @@ button {
   visibility: visible;
 }
 
+.tooltip.mobile .tooltip__content {
+  right: 0;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  max-width: 250px;
+}
+
 .tooltip__btn {
   height: 24px;
   font-weight: 500;
@@ -925,6 +933,17 @@ button {
   background: #FDCE1B;
 }
 
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+}
+
 .products__item {
   background: #FFFFFF;
   border: 1px solid #E6EAED;
@@ -1213,6 +1232,17 @@ button {
   width: max-content;
   margin-left: auto;
   color: #88919D;
+  -webkit-transition: 200ms ease;
+  -o-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+.products__item-expand:hover {
+  color: #444444;
+}
+
+.products__item-expand:hover svg {
+  fill: #444444;
 }
 
 .products__item-expand.active svg {
@@ -1265,6 +1295,10 @@ button {
   -o-transition: 200ms ease;
   transition: 200ms ease;
   position: relative;
+}
+
+.products__item-content__btn:hover {
+  color: #444444;
 }
 
 .products__item-content__btn::before {
@@ -1329,6 +1363,34 @@ button {
   font-size: 15px;
   line-height: 20px;
   color: #444444;
+}
+
+.products__btn {
+  font-size: 15px;
+  line-height: 18px;
+  color: #444444;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #E6EAED;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-transition: 200ms ease;
+  -o-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+.products__btn:hover {
+  background: #F5F8FA;
 }
 
 @media (min-width: 575px) {
