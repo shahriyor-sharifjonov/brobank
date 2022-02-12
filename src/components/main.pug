@@ -1,530 +1,580 @@
 mixin main()
   main.main 
-    .section 
-      .section__wrapper.container
-        h1.title Кредитные карты без отказа
-        .info 
-          p.info__p Многие клиенты сталкиваются с трудностями оформления банковской карты из-за плохой кредитной истории или отсутствия справки подтверждающей платежеспособность. Решение этой проблемы есть, так как существует возможность взять кредитную карту без отказа. Так как существует возможность взять кредитную карту без отказа. 
-          button(type="button").info__expand 
-            span Развернуть 
+    .container
+      h1.title Кредитные карты без отказа
+      .info 
+        p.info__p Многие клиенты сталкиваются с трудностями оформления банковской карты из-за плохой кредитной истории или отсутствия справки подтверждающей платежеспособность. Решение этой проблемы есть, так как существует возможность взять кредитную карту без отказа. Так как существует возможность взять кредитную карту без отказа. 
+        button(type="button").info__expand 
+          span Развернуть 
+          <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+          </svg>
+      .categories.swiper 
+          .categories__wrapper.swiper-wrapper  
+            .categories__item.swiper-slide 
+              p.categories__item-p Лучшие
+            .categories__item.categories__item_active.swiper-slide 
+              p.categories__item-p Без отказа
+            .categories__item.swiper-slide 
+              p.categories__item-p С плохой КИ
+            .categories__item.swiper-slide 
+              p.categories__item-p Без справок
+            .categories__item.swiper-slide 
+              p.categories__item-p Виртуальные
+            .categories__item.swiper-slide 
+              p.categories__item-p Для снятия наличных
+            .categories__item.swiper-slide 
+              p.categories__item-p Для Москвы
+            .categories__item.swiper-slide 
+              p.categories__item-p По паспорту
+            .categories__item.swiper-slide 
+              p.categories__item-p Онлайн
+      .filter
+        .filter__buttons
+          button(type='button').filter__show.active 
+            img(src="@img/settings.svg", alt="" draggable="false" width="18px" height="18px").filter__show-img 
+            span.filter__show-text Фильтры
+            span.filter__show-badge 3
+          .dropdown.filter__dropdown
+            button(type='button' data-default="Сортировка").dropdown__button.dropdown__button_sm-static Сортировка
+            ul.dropdown__list 
+              li.dropdown__list-item(data-value="По умолчанию") По умолчанию
+              li.dropdown__list-item(data-value="По рейтингу") По рейтингу
+              li.dropdown__list-item(data-value="По количеству заявок") По количеству заявок
+              li.dropdown__list-item(data-value="По кредитному лимиту") По кредитному лимиту
+              li.dropdown__list-item(data-value="По льготному периоду") По льготному периоду
+              li.dropdown__list-item(data-value="По процентной ставке ") По процентной ставке 
+            input(type="text" name="select-category" value="").dropdown__input_hidden 
+        .filter__content.active
+          .filter__header
+            p.filter__title Фильтры
+            button(type="button").filter__reset Сбросить
+          .filter__wrap 
+            .filter__item 
+              label(for="limit").filter__item-label Кредитный лимит 
+              input(type="text" id="limit" name="limit" placeholder="Любой, руб.").input.filter__item-input
+            .filter__item 
+              label(for="period").filter__item-label Льготный период
+              .dropdown.filter__item-dropdown
+                button(type='button' id="period" data-default="До 100 дней").dropdown__button До 100 дней
+                ul.dropdown__list.large-sm.right  
+                  li.dropdown__list-item(data-value="Любой") Любой
+                  li.dropdown__list-item.dropdown__list-item_active.default(data-value="до 100 дней") до 100 дней
+                  li.dropdown__list-item(data-value="от 100 до 200 дней") от 100 до 200 дней
+                  li.dropdown__list-item(data-value="более 200 дней") более 200 дней
+                input(type="text" name="period" value="").dropdown__input_hidden 
+            .filter__item
+              label(for="bank").filter__item-label Банк
+              .dropdown.filter__item-dropdown
+                button(type='button' id="bank" data-default="Любой").dropdown__button Любой
+                .dropdown__list.large-sm.left 
+                  ul.dropdown__list-scroll
+                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любой") Любой
+                    li.dropdown__list-item(data-value="Альфабанк") Альфабанк
+                    li.dropdown__list-item(data-value="Быстробанк") Быстробанк
+                    li.dropdown__list-item(data-value="ВТБ Банк") ВТБ Банк
+                    li.dropdown__list-item(data-value="Газпром Банк") Газпром Банк
+                    li.dropdown__list-item(data-value="Кредит европа Банк") Кредит европа Банк
+                    li.dropdown__list-item(data-value="Локо-банк") Локо-банк
+                    li.dropdown__list-item(data-value="МТС банк ") МТС банк 
+                    li.dropdown__list-item(data-value="Открытие банк") Открытие банк
+                    li.dropdown__list-item(data-value="Почта банк") Почта банк
+                    li.dropdown__list-item(data-value="Промсвязьбанк") Промсвязьбанк
+                    li.dropdown__list-item(data-value="Райффайзенбанк") Райффайзенбанк
+                    li.dropdown__list-item(data-value="Ренессанс Кредит") Ренессанс Кредит
+                    li.dropdown__list-item(data-value="Росбанк") Росбанк
+                    li.dropdown__list-item(data-value="Русский стандарт Банк") Русский стандарт Банк
+                    li.dropdown__list-item(data-value="Ситибанк") Ситибанк
+                    li.dropdown__list-item(data-value="Совкомбанк") Совкомбанк
+                    li.dropdown__list-item(data-value="Тинькофф Банк ") Тинькофф Банк 
+                    li.dropdown__list-item(data-value="УБРиР") УБРиР
+                    li.dropdown__list-item(data-value="Экскобанк") Экскобанк
+                    li.dropdown__list-item(data-value="ЮниКредит Банк") ЮниКредит Банк
+                input(type="text" name="bank" value="").dropdown__input_hidden 
+            .filter__item
+              label(for="delivery").filter__item-label Доставка
+              .dropdown.filter__item-dropdown
+                button(type='button' id="delivery" data-default="На дом").dropdown__button На дом
+                ul.dropdown__list.large-sm.right
+                  li.dropdown__list-item.dropdown__list-item_active.default(data-value="На дом") На дом
+                  li.dropdown__list-item(data-value="Курьером") Курьером
+                  li.dropdown__list-item(data-value="По почте") По почте
+                  li.dropdown__list-item(data-value="В отделение банка") В отделение банка
+                  li.dropdown__list-item(data-value="Виртуальные ") Виртуальные 
+                input(type="text" name="delivery" value="").dropdown__input_hidden          
+            .filter__item 
+              label(for="payment").filter__item-label Платежная система
+              .dropdown.filter__item-dropdown
+                button(type='button' id="payment" data-default="Любая").dropdown__button Любая
+                ul.dropdown__list 
+                  li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любая") Любая
+                  li.dropdown__list-item(data-value="Visa") Visa
+                  li.dropdown__list-item(data-value="Mastercard") Mastercard
+                  li.dropdown__list-item(data-value="МИР") МИР
+                input(type="text" name="payment" value="").dropdown__input_hidden          
+            .filter__item 
+              label(for="terms" data-sm-value="Еще условия" data-value="Дополнительные условия").filter__item-label.sm-change Дополнительные условия
+              .dropdown_with-chk.filter__item-dropdown
+                button(type='button' id="terms" data-sm-value="Выберите" data-value="Выберите из списка" data-default="Выберите из списка").dropdown_with-chk__button.sm-change Выберите из списка
+                ul.dropdown_with-chk__list
+                  li.dropdown_with-chk__list-item 
+                    input(type="checkbox", name="i-1" id="i-1").dropdown_with-chk__list-item_label
+                    label(for="i-1").dropdown_with-chk__list-item_label Без справок о доходе
+                  li.dropdown_with-chk__list-item 
+                    input(type="checkbox", name="i-2" id="i-2").dropdown_with-chk__list-item_label
+                    label(for="i-2").dropdown_with-chk__list-item_label Бесплатное снятие наличных
+                  li.dropdown_with-chk__list-item 
+                    input(type="checkbox", name="i-3" id="i-3").dropdown_with-chk__list-item_label
+                    label(for="i-3").dropdown_with-chk__list-item_label С кэшбэком
+                  li.dropdown_with-chk__list-item 
+                    input(type="checkbox", name="i-4" id="i-4").dropdown_with-chk__list-item_label
+                    label(for="i-4").dropdown_with-chk__list-item_label Бесплатное обслуживание
+          button(type='button').filter__btn Показать 134 предложения 
+      .products 
+        article.products__item   
+          .products__item-header 
+            h1.products__item-title  
+              a(href="#!") Кредитная карта МТС Деньги Zero
+            .products__item-category.tooltip.desktop 
+              button(type="button").tooltip__btn.products__item-category__btn Партнерский
+              .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+          .products__item-row 
+            .products__item-col
+              .products__item-img 
+                img(src="@img/product-1.png", alt="" draggable="false")
+              .products__item-inner
+                .products__item-top 
+                  .products__item-stars 
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star-bad.svg", alt="" draggable="false")
+                    span 4.8
+                  a(href="#!").products__item-reviews Отзывы: 128
+                  .products__item-category.tooltip.mobile 
+                    button(type="button").tooltip__btn.products__item-category__btn Партнерский
+                    .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+                .products__item-info 
+                  .products__item-info__item 
+                    p Кред. лимит  <span>300 000 ₽</span>
+                    p Проц. ставка   <span>От 12%</span>
+                    p Без процентов   <span>До 55 дней</span>
+                  .products__item-info__item 
+                    p Плата/мес.  <span>590 руб./год</span>
+                    p Кэшбек  <span>От 1 до 30%</span>
+                    p Решение  <span>За 10 минут</span>
+                .products__item-categories
+                  a(href="#!").products__item-categories-item Рассрочка 0% 
+                  a(href="#!").products__item-categories-item Без оплаты за обслуживание
+                  a(href="#!").products__item-categories-item Бесплатное снятие
+                  a(href="#!").products__item-categories-item С кэшбэком
+                  a(href="#!").products__item-categories-item Срочное решение
+                  a(href="#!").products__item-categories-item Без справок о доходе
+                  a(href="#!").products__item-categories-item С 18 лет
+            .products__item-col
+              .products__item-buttons
+                a(href="#!").products__item-btn.primary Оформить 
+                a(href="#!").products__item-btn Подробнее 
+                a(href="#!").products__item-btn 
+                  img(src="@img/compare.svg", alt="" draggable="false")
+              .products__item-right-row 
+                div 
+                  p Альфа-Банк
+                  p Лиц. ЦБ: №1326 
+                div 
+                  p Тел.: 8 800 2000 000
+                  p Сайт: alfabank.ru
+              button(type="button").products__item-expand О карте
+                <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+                </svg>
+          .products__item-content 
+            .products__item-content__header 
+              button(type='button' data-target="condition").products__item-content__btn.active Условия
+              button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
+              button(type='button' data-target="percent").products__item-content__btn Проценты
+            .products__item-content__inner 
+              .products__item-content__item.active#condition
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p MasterCard
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 3 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 300 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+
+              .products__item-content__item#cashback
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p МИР
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 2 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 400 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+              .products__item-content__item#percent 
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p Visa
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 4 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 500 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+        article.products__item   
+          .products__item-header 
+            h1.products__item-title  
+              a(href="#!") Кредитная карта Тинькофф Платинум
+            .products__item-category.tooltip.desktop 
+              button(type="button").tooltip__btn.products__item-category__btn Партнерский
+              .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+          .products__item-row 
+            .products__item-col
+              .products__item-img 
+                img(src="@img/product-2.png", alt="" draggable="false")
+              .products__item-inner
+                .products__item-top 
+                  .products__item-stars 
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star-bad.svg", alt="" draggable="false")
+                    span 4.8
+                  a(href="#!").products__item-reviews Отзывы: 128
+                  .products__item-category.tooltip.mobile 
+                    button(type="button").tooltip__btn.products__item-category__btn Партнерский
+                    .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+                .products__item-info 
+                  .products__item-info__item 
+                    p Кред. лимит  <span>300 000 ₽</span>
+                    p Проц. ставка   <span>От 12%</span>
+                    p Без процентов   <span>До 55 дней</span>
+                  .products__item-info__item 
+                    p Плата/мес.  <span>590 руб./год</span>
+                    p Кэшбек  <span>От 1 до 30%</span>
+                    p Решение  <span>За 10 минут</span>
+                .products__item-categories
+                  a(href="#!").products__item-categories-item Рассрочка 0% 
+                  a(href="#!").products__item-categories-item Без оплаты за обслуживание
+                  a(href="#!").products__item-categories-item Бесплатное снятие
+                  a(href="#!").products__item-categories-item С кэшбэком
+                  a(href="#!").products__item-categories-item Срочное решение
+                  a(href="#!").products__item-categories-item Без справок о доходе
+                  a(href="#!").products__item-categories-item С 18 лет
+            .products__item-col
+              .products__item-buttons
+                a(href="#!").products__item-btn.primary Оформить 
+                a(href="#!").products__item-btn Подробнее 
+                a(href="#!").products__item-btn 
+                  img(src="@img/compare.svg", alt="" draggable="false")
+              .products__item-right-row 
+                div 
+                  p Альфа-Банк
+                  p Лиц. ЦБ: №1326 
+                div 
+                  p Тел.: 8 800 2000 000
+                  p Сайт: alfabank.ru
+              button(type="button").products__item-expand О карте
+                <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+                </svg>
+          .products__item-content 
+            .products__item-content__header 
+              button(type='button' data-target="condition").products__item-content__btn.active Условия
+              button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
+              button(type='button' data-target="percent").products__item-content__btn Проценты
+            .products__item-content__inner 
+              .products__item-content__item.active#condition
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p MasterCard
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 3 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 300 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+
+              .products__item-content__item#cashback
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p МИР
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 2 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 400 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+              .products__item-content__item#percent 
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p Visa
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 4 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 500 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+        article.products__item   
+          .products__item-header 
+            h1.products__item-title  
+              a(href="#!") Кредитная карта 100 дней без процентов
+            .products__item-category.tooltip.desktop 
+              button(type="button").tooltip__btn.products__item-category__btn Партнерский
+              .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+          .products__item-row 
+            .products__item-col
+              .products__item-img 
+                img(src="@img/product-3.png", alt="" draggable="false")
+              .products__item-inner
+                .products__item-top 
+                  .products__item-stars 
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star.svg", alt="" draggable="false")
+                    img(src="@img/star-bad.svg", alt="" draggable="false")
+                    span 4.8
+                  a(href="#!").products__item-reviews Отзывы: 128
+                  .products__item-category.tooltip.mobile 
+                    button(type="button").tooltip__btn.products__item-category__btn Партнерский
+                    .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
+                .products__item-info 
+                  .products__item-info__item 
+                    p Кред. лимит  <span>300 000 ₽</span>
+                    p Проц. ставка   <span>От 12%</span>
+                    p Без процентов   <span>До 55 дней</span>
+                  .products__item-info__item 
+                    p Плата/мес.  <span>590 руб./год</span>
+                    p Кэшбек  <span>От 1 до 30%</span>
+                    p Решение  <span>За 10 минут</span>
+                .products__item-categories
+                  a(href="#!").products__item-categories-item Рассрочка 0% 
+                  a(href="#!").products__item-categories-item Без оплаты за обслуживание
+                  a(href="#!").products__item-categories-item Бесплатное снятие
+                  a(href="#!").products__item-categories-item С кэшбэком
+                  a(href="#!").products__item-categories-item Срочное решение
+                  a(href="#!").products__item-categories-item Без справок о доходе
+                  a(href="#!").products__item-categories-item С 18 лет
+            .products__item-col
+              .products__item-buttons
+                a(href="#!").products__item-btn.primary Оформить 
+                a(href="#!").products__item-btn Подробнее 
+                a(href="#!").products__item-btn 
+                  img(src="@img/compare.svg", alt="" draggable="false")
+              .products__item-right-row 
+                div 
+                  p Альфа-Банк
+                  p Лиц. ЦБ: №1326 
+                div 
+                  p Тел.: 8 800 2000 000
+                  p Сайт: alfabank.ru
+              button(type="button").products__item-expand О карте
+                <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+                </svg>
+          .products__item-content 
+            .products__item-content__header 
+              button(type='button' data-target="condition").products__item-content__btn.active Условия
+              button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
+              button(type='button' data-target="percent").products__item-content__btn Проценты
+            .products__item-content__inner 
+              .products__item-content__item.active#condition
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p MasterCard
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 3 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 300 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+
+              .products__item-content__item#cashback
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p МИР
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 2 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 400 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+              .products__item-content__item#percent 
+                .products__item-content__item-row
+                  .products__item-content__item-title Платежная система
+                  .products__item-content__item-p Visa
+                .products__item-content__item-row
+                  .products__item-content__item-title Тип карты
+                  .products__item-content__item-p World
+                .products__item-content__item-row
+                  .products__item-content__item-title Срок действия
+                  .products__item-content__item-p 4 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Максимальный лимит
+                  .products__item-content__item-p 500 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Минимальный лимит
+                  .products__item-content__item-p 10 000 руб.
+                .products__item-content__item-row
+                  .products__item-content__item-title Стоимость обслуживания
+                  .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
+                .products__item-content__item-row
+                  .products__item-content__item-title Льготный период
+                  .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+        button(type='button').products__btn Показать 
+        p.products__p Информация об условиях взята с официальных сайтов банков. Рекомендуем уточнять актуальные тарифы на сайте, по телефонам, в отделениях интересующего банка. Дата обновления: 25.01.2022
+      .rating.accordion-container
+        .accordion
+          button(type='button').accordion__button.rating__title.active Рейтинг кредитных карт: ТОП-10 лучших продуктов для оформления в декабре 2021 года
             <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
             </svg>
-        .categories.swiper 
-            .categories__wrapper.swiper-wrapper  
-              .categories__item.swiper-slide 
-                p.categories__item-p Лучшие
-              .categories__item.categories__item_active.swiper-slide 
-                p.categories__item-p Без отказа
-              .categories__item.swiper-slide 
-                p.categories__item-p С плохой КИ
-              .categories__item.swiper-slide 
-                p.categories__item-p Без справок
-              .categories__item.swiper-slide 
-                p.categories__item-p Виртуальные
-              .categories__item.swiper-slide 
-                p.categories__item-p Для снятия наличных
-              .categories__item.swiper-slide 
-                p.categories__item-p Для Москвы
-              .categories__item.swiper-slide 
-                p.categories__item-p По паспорту
-              .categories__item.swiper-slide 
-                p.categories__item-p Онлайн
-        .filter
-          .filter__buttons
-            button(type='button').filter__show.active 
-              img(src="@img/settings.svg", alt="" draggable="false" width="18px" height="18px").filter__show-img 
-              span.filter__show-text Фильтры
-              span.filter__show-badge 3
-            .dropdown.filter__dropdown
-              button(type='button' data-default="Сортировка").dropdown__button.dropdown__button_sm-static Сортировка
-              ul.dropdown__list 
-                li.dropdown__list-item(data-value="По умолчанию") По умолчанию
-                li.dropdown__list-item(data-value="По рейтингу") По рейтингу
-                li.dropdown__list-item(data-value="По количеству заявок") По количеству заявок
-                li.dropdown__list-item(data-value="По кредитному лимиту") По кредитному лимиту
-                li.dropdown__list-item(data-value="По льготному периоду") По льготному периоду
-                li.dropdown__list-item(data-value="По процентной ставке ") По процентной ставке 
-              input(type="text" name="select-category" value="").dropdown__input_hidden 
-          .filter__content.active
-            .filter__header
-              p.filter__title Фильтры
-              button(type="button").filter__reset Сбросить
-            .filter__wrap 
-              .filter__item 
-                label(for="limit").filter__item-label Кредитный лимит 
-                input(type="text" id="limit" name="limit" placeholder="Любой, руб.").input.filter__item-input
-              .filter__item 
-                label(for="period").filter__item-label Льготный период
-                .dropdown.filter__item-dropdown
-                  button(type='button' id="period" data-default="До 100 дней").dropdown__button До 100 дней
-                  ul.dropdown__list.large-sm.right  
-                    li.dropdown__list-item(data-value="Любой") Любой
-                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="до 100 дней") до 100 дней
-                    li.dropdown__list-item(data-value="от 100 до 200 дней") от 100 до 200 дней
-                    li.dropdown__list-item(data-value="более 200 дней") более 200 дней
-                  input(type="text" name="period" value="").dropdown__input_hidden 
-              .filter__item
-                label(for="bank").filter__item-label Банк
-                .dropdown.filter__item-dropdown
-                  button(type='button' id="bank" data-default="Любой").dropdown__button Любой
-                  .dropdown__list.large-sm.left 
-                    ul.dropdown__list-scroll
-                      li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любой") Любой
-                      li.dropdown__list-item(data-value="Альфабанк") Альфабанк
-                      li.dropdown__list-item(data-value="Быстробанк") Быстробанк
-                      li.dropdown__list-item(data-value="ВТБ Банк") ВТБ Банк
-                      li.dropdown__list-item(data-value="Газпром Банк") Газпром Банк
-                      li.dropdown__list-item(data-value="Кредит европа Банк") Кредит европа Банк
-                      li.dropdown__list-item(data-value="Локо-банк") Локо-банк
-                      li.dropdown__list-item(data-value="МТС банк ") МТС банк 
-                      li.dropdown__list-item(data-value="Открытие банк") Открытие банк
-                      li.dropdown__list-item(data-value="Почта банк") Почта банк
-                      li.dropdown__list-item(data-value="Промсвязьбанк") Промсвязьбанк
-                      li.dropdown__list-item(data-value="Райффайзенбанк") Райффайзенбанк
-                      li.dropdown__list-item(data-value="Ренессанс Кредит") Ренессанс Кредит
-                      li.dropdown__list-item(data-value="Росбанк") Росбанк
-                      li.dropdown__list-item(data-value="Русский стандарт Банк") Русский стандарт Банк
-                      li.dropdown__list-item(data-value="Ситибанк") Ситибанк
-                      li.dropdown__list-item(data-value="Совкомбанк") Совкомбанк
-                      li.dropdown__list-item(data-value="Тинькофф Банк ") Тинькофф Банк 
-                      li.dropdown__list-item(data-value="УБРиР") УБРиР
-                      li.dropdown__list-item(data-value="Экскобанк") Экскобанк
-                      li.dropdown__list-item(data-value="ЮниКредит Банк") ЮниКредит Банк
-                  input(type="text" name="bank" value="").dropdown__input_hidden 
-              .filter__item
-                label(for="delivery").filter__item-label Доставка
-                .dropdown.filter__item-dropdown
-                  button(type='button' id="delivery" data-default="На дом").dropdown__button На дом
-                  ul.dropdown__list.large-sm.right
-                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="На дом") На дом
-                    li.dropdown__list-item(data-value="Курьером") Курьером
-                    li.dropdown__list-item(data-value="По почте") По почте
-                    li.dropdown__list-item(data-value="В отделение банка") В отделение банка
-                    li.dropdown__list-item(data-value="Виртуальные ") Виртуальные 
-                  input(type="text" name="delivery" value="").dropdown__input_hidden          
-              .filter__item 
-                label(for="payment").filter__item-label Платежная система
-                .dropdown.filter__item-dropdown
-                  button(type='button' id="payment" data-default="Любая").dropdown__button Любая
-                  ul.dropdown__list 
-                    li.dropdown__list-item.dropdown__list-item_active.default(data-value="Любая") Любая
-                    li.dropdown__list-item(data-value="Visa") Visa
-                    li.dropdown__list-item(data-value="Mastercard") Mastercard
-                    li.dropdown__list-item(data-value="МИР") МИР
-                  input(type="text" name="payment" value="").dropdown__input_hidden          
-              .filter__item 
-                label(for="terms" data-sm-value="Еще условия" data-value="Дополнительные условия").filter__item-label.sm-change Дополнительные условия
-                .dropdown_with-chk.filter__item-dropdown
-                  button(type='button' id="terms" data-sm-value="Выберите" data-value="Выберите из списка" data-default="Выберите из списка").dropdown_with-chk__button.sm-change Выберите из списка
-                  ul.dropdown_with-chk__list
-                    li.dropdown_with-chk__list-item 
-                      input(type="checkbox", name="i-1" id="i-1").dropdown_with-chk__list-item_label
-                      label(for="i-1").dropdown_with-chk__list-item_label Без справок о доходе
-                    li.dropdown_with-chk__list-item 
-                      input(type="checkbox", name="i-2" id="i-2").dropdown_with-chk__list-item_label
-                      label(for="i-2").dropdown_with-chk__list-item_label Бесплатное снятие наличных
-                    li.dropdown_with-chk__list-item 
-                      input(type="checkbox", name="i-3" id="i-3").dropdown_with-chk__list-item_label
-                      label(for="i-3").dropdown_with-chk__list-item_label С кэшбэком
-                    li.dropdown_with-chk__list-item 
-                      input(type="checkbox", name="i-4" id="i-4").dropdown_with-chk__list-item_label
-                      label(for="i-4").dropdown_with-chk__list-item_label Бесплатное обслуживание
-            button(type='button').filter__btn Показать 134 предложения 
-        .products 
-          article.products__item   
-            .products__item-header 
-              h1.products__item-title  
-                a(href="#!") Кредитная карта МТС Деньги Zero
-              .products__item-category.tooltip.desktop 
-                button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-            .products__item-row 
-              .products__item-col
-                .products__item-img 
-                  img(src="@img/product-1.png", alt="" draggable="false")
-                .products__item-inner
-                  .products__item-top 
-                    .products__item-stars 
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star-bad.svg", alt="" draggable="false")
-                      span 4.8
-                    a(href="#!").products__item-reviews Отзывы: 128
-                    .products__item-category.tooltip.mobile 
-                      button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                      .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-                  .products__item-info 
-                    .products__item-info__item 
-                      p Кред. лимит  <span>300 000 ₽</span>
-                      p Проц. ставка   <span>От 12%</span>
-                      p Без процентов   <span>До 55 дней</span>
-                    .products__item-info__item 
-                      p Плата/мес.  <span>590 руб./год</span>
-                      p Кэшбек  <span>От 1 до 30%</span>
-                      p Решение  <span>За 10 минут</span>
-                  .products__item-categories
-                    a(href="#!").products__item-categories-item Рассрочка 0% 
-                    a(href="#!").products__item-categories-item Без оплаты за обслуживание
-                    a(href="#!").products__item-categories-item Бесплатное снятие
-                    a(href="#!").products__item-categories-item С кэшбэком
-                    a(href="#!").products__item-categories-item Срочное решение
-                    a(href="#!").products__item-categories-item Без справок о доходе
-                    a(href="#!").products__item-categories-item С 18 лет
-              .products__item-col
-                .products__item-buttons
-                  a(href="#!").products__item-btn.primary Оформить 
-                  a(href="#!").products__item-btn Подробнее 
-                  a(href="#!").products__item-btn 
-                    img(src="@img/compare.svg", alt="" draggable="false")
-                .products__item-right-row 
-                  div 
-                    p Альфа-Банк
-                    p Лиц. ЦБ: №1326 
-                  div 
-                    p Тел.: 8 800 2000 000
-                    p Сайт: alfabank.ru
-                button(type="button").products__item-expand О карте
-                  <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
-                  </svg>
-            .products__item-content 
-              .products__item-content__header 
-                button(type='button' data-target="condition").products__item-content__btn.active Условия
-                button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
-                button(type='button' data-target="percent").products__item-content__btn Проценты
-              .products__item-content__inner 
-                .products__item-content__item.active#condition
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p MasterCard
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 3 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 300 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
+          .accordion__content(style="display: block;") 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Сравнительная таблица лучших кредитных карт
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Анализ рынка предложений в декабре
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Как составлялся рейтинг кредитных карт 2021 года (декабря)
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Что лучше - кредитная карта или потребительский кредит?
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Можно ли оформить две кредитные карты?
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
+        .accordion
+          button(type='button').accordion__button Как проще выбрать самую выгодную кредитную карту?
+            <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z" fill="#444444"/>
+            </svg>
+          .accordion__content 
+            p Здесь необходима индивидуальная оценка. Учитывая способ траты займа, цель, сумму, срок погашения и т.д. Если планируется периодическое частичное использование денег или оплата покупки в торгово-сервисном предприятии, то лучше оформить кредитную карту с льготным периодом.
 
-                .products__item-content__item#cashback
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p МИР
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 2 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 400 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-                .products__item-content__item#percent 
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p Visa
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 4 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 500 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-          article.products__item   
-            .products__item-header 
-              h1.products__item-title  
-                a(href="#!") Кредитная карта Тинькофф Платинум
-              .products__item-category.tooltip.desktop 
-                button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-            .products__item-row 
-              .products__item-col
-                .products__item-img 
-                  img(src="@img/product-2.png", alt="" draggable="false")
-                .products__item-inner
-                  .products__item-top 
-                    .products__item-stars 
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star-bad.svg", alt="" draggable="false")
-                      span 4.8
-                    a(href="#!").products__item-reviews Отзывы: 128
-                    .products__item-category.tooltip.mobile 
-                      button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                      .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-                  .products__item-info 
-                    .products__item-info__item 
-                      p Кред. лимит  <span>300 000 ₽</span>
-                      p Проц. ставка   <span>От 12%</span>
-                      p Без процентов   <span>До 55 дней</span>
-                    .products__item-info__item 
-                      p Плата/мес.  <span>590 руб./год</span>
-                      p Кэшбек  <span>От 1 до 30%</span>
-                      p Решение  <span>За 10 минут</span>
-                  .products__item-categories
-                    a(href="#!").products__item-categories-item Рассрочка 0% 
-                    a(href="#!").products__item-categories-item Без оплаты за обслуживание
-                    a(href="#!").products__item-categories-item Бесплатное снятие
-                    a(href="#!").products__item-categories-item С кэшбэком
-                    a(href="#!").products__item-categories-item Срочное решение
-                    a(href="#!").products__item-categories-item Без справок о доходе
-                    a(href="#!").products__item-categories-item С 18 лет
-              .products__item-col
-                .products__item-buttons
-                  a(href="#!").products__item-btn.primary Оформить 
-                  a(href="#!").products__item-btn Подробнее 
-                  a(href="#!").products__item-btn 
-                    img(src="@img/compare.svg", alt="" draggable="false")
-                .products__item-right-row 
-                  div 
-                    p Альфа-Банк
-                    p Лиц. ЦБ: №1326 
-                  div 
-                    p Тел.: 8 800 2000 000
-                    p Сайт: alfabank.ru
-                button(type="button").products__item-expand О карте
-                  <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
-                  </svg>
-            .products__item-content 
-              .products__item-content__header 
-                button(type='button' data-target="condition").products__item-content__btn.active Условия
-                button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
-                button(type='button' data-target="percent").products__item-content__btn Проценты
-              .products__item-content__inner 
-                .products__item-content__item.active#condition
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p MasterCard
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 3 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 300 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-
-                .products__item-content__item#cashback
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p МИР
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 2 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 400 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-                .products__item-content__item#percent 
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p Visa
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 4 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 500 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-          article.products__item   
-            .products__item-header 
-              h1.products__item-title  
-                a(href="#!") Кредитная карта 100 дней без процентов
-              .products__item-category.tooltip.desktop 
-                button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-            .products__item-row 
-              .products__item-col
-                .products__item-img 
-                  img(src="@img/product-3.png", alt="" draggable="false")
-                .products__item-inner
-                  .products__item-top 
-                    .products__item-stars 
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star.svg", alt="" draggable="false")
-                      img(src="@img/star-bad.svg", alt="" draggable="false")
-                      span 4.8
-                    a(href="#!").products__item-reviews Отзывы: 128
-                    .products__item-category.tooltip.mobile 
-                      button(type="button").tooltip__btn.products__item-category__btn Партнерский
-                      .tooltip__content Мы получим вознаграждение в случае если вы оформите этот продукт через наш сайт. <a href="#!">Подробнее</a>
-                  .products__item-info 
-                    .products__item-info__item 
-                      p Кред. лимит  <span>300 000 ₽</span>
-                      p Проц. ставка   <span>От 12%</span>
-                      p Без процентов   <span>До 55 дней</span>
-                    .products__item-info__item 
-                      p Плата/мес.  <span>590 руб./год</span>
-                      p Кэшбек  <span>От 1 до 30%</span>
-                      p Решение  <span>За 10 минут</span>
-                  .products__item-categories
-                    a(href="#!").products__item-categories-item Рассрочка 0% 
-                    a(href="#!").products__item-categories-item Без оплаты за обслуживание
-                    a(href="#!").products__item-categories-item Бесплатное снятие
-                    a(href="#!").products__item-categories-item С кэшбэком
-                    a(href="#!").products__item-categories-item Срочное решение
-                    a(href="#!").products__item-categories-item Без справок о доходе
-                    a(href="#!").products__item-categories-item С 18 лет
-              .products__item-col
-                .products__item-buttons
-                  a(href="#!").products__item-btn.primary Оформить 
-                  a(href="#!").products__item-btn Подробнее 
-                  a(href="#!").products__item-btn 
-                    img(src="@img/compare.svg", alt="" draggable="false")
-                .products__item-right-row 
-                  div 
-                    p Альфа-Банк
-                    p Лиц. ЦБ: №1326 
-                  div 
-                    p Тел.: 8 800 2000 000
-                    p Сайт: alfabank.ru
-                button(type="button").products__item-expand О карте
-                  <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.1723 0.41384C10.9539 0.211014 10.5997 0.211014 10.3813 0.41384L6.00399 4.4785L1.62668 0.413839C1.40826 0.211012 1.05412 0.211012 0.835696 0.413839C0.617268 0.616665 0.617268 0.945502 0.835696 1.14833L5.60851 5.58022C5.71771 5.68165 5.86087 5.73235 6.00399 5.73235C6.1471 5.73235 6.29029 5.68165 6.39949 5.58022L11.1723 1.14833C11.3907 0.945504 11.3907 0.616667 11.1723 0.41384Z"/>
-                  </svg>
-            .products__item-content 
-              .products__item-content__header 
-                button(type='button' data-target="condition").products__item-content__btn.active Условия
-                button(type='button' data-target="cashback").products__item-content__btn Кэшбэк
-                button(type='button' data-target="percent").products__item-content__btn Проценты
-              .products__item-content__inner 
-                .products__item-content__item.active#condition
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p MasterCard
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 3 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 300 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-
-                .products__item-content__item#cashback
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p МИР
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 2 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 400 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-                .products__item-content__item#percent 
-                  .products__item-content__item-row
-                    .products__item-content__item-title Платежная система
-                    .products__item-content__item-p Visa
-                  .products__item-content__item-row
-                    .products__item-content__item-title Тип карты
-                    .products__item-content__item-p World
-                  .products__item-content__item-row
-                    .products__item-content__item-title Срок действия
-                    .products__item-content__item-p 4 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Максимальный лимит
-                    .products__item-content__item-p 500 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Минимальный лимит
-                    .products__item-content__item-p 10 000 руб.
-                  .products__item-content__item-row
-                    .products__item-content__item-title Стоимость обслуживания
-                    .products__item-content__item-p 0 руб. при неиспользовании карты <br>590 руб. в год если пользуетесь <br>0 руб. при оформлении карты до 22.11.2021 года
-                  .products__item-content__item-row
-                    .products__item-content__item-title Льготный период
-                    .products__item-content__item-p До 12 месяцев у партнеров по рассрочке.<br>120 дней при оплате кредитов в других банков. <br>До 55 дней по любым покупкам
-          button(type='button').products__btn Показать 
-        
 

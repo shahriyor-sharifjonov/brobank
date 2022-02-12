@@ -942,6 +942,7 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 30px;
+  margin-bottom: 30px;
 }
 
 .products__item {
@@ -1393,6 +1394,87 @@ button {
   background: #F5F8FA;
 }
 
+.products__p {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 160%;
+  color: #88919D;
+}
+
+.accordion:not(:last-of-type) {
+  border-bottom: 1px solid #E6EAED;
+}
+
+.accordion-container {
+  background: #FFFFFF;
+  border: 1px solid #E6EAED;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.accordion__button {
+  font-size: 17px;
+  line-height: 140%;
+  color: #444444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  -webkit-transition: 200ms ease;
+  -o-transition: 200ms ease;
+  transition: 200ms ease;
+  -webkit-column-gap: 18px;
+     -moz-column-gap: 18px;
+          column-gap: 18px;
+  padding: 20px;
+  width: 100%;
+}
+
+.accordion__button.active {
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 140%;
+}
+
+.accordion__button svg {
+  -webkit-transition: 200ms ease;
+  -o-transition: 200ms ease;
+  transition: 200ms ease;
+  min-width: 12px;
+}
+
+.accordion__button.active svg {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.accordion__content {
+  display: none;
+  padding: 0 20px 20px 20px;
+}
+
+.accordion__content p {
+  font-size: 17px;
+  line-height: 160%;
+  color: #444444;
+}
+
+.rating__title.active {
+  font-weight: bold;
+  font-size: 29px;
+  line-height: 140%;
+  text-align: left;
+  color: #000000;
+}
+
 @media (min-width: 575px) {
   .container {
     max-width: 540px;
@@ -1647,6 +1729,10 @@ button {
     width: calc(50% - 8px);
   }
 
+  .products {
+    margin-bottom: 20px;
+  }
+
   .products__item-info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1675,6 +1761,30 @@ button {
     font-size: 13px;
     line-height: 120%;
     margin-bottom: 4px;
+  }
+
+  .products__p {
+    margin-top: 0;
+  }
+
+  .accordion__button {
+    -webkit-column-gap: 8px;
+       -moz-column-gap: 8px;
+            column-gap: 8px;
+  }
+
+  .accordion__button.active {
+    font-size: 17px;
+    line-height: 140%;
+  }
+
+  .accordion__button svg {
+    min-width: 10px;
+  }
+
+  .rating__title.active {
+    font-size: 19px;
+    line-height: 27px;
   }
 }
 

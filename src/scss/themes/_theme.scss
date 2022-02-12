@@ -373,6 +373,10 @@ button{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    margin-bottom: 30px;
+    @include media($sm){
+        margin-bottom: 20px;
+    }
     &__item{
         background: #FFFFFF;
         border: 1px solid #E6EAED;
@@ -768,6 +772,89 @@ button{
         transition: 200ms ease;
         &:hover{
             background: #F5F8FA;
+        }
+    }
+    &__p{
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 160%;
+        color: #88919D;
+        @include media($sm){
+            margin-top: 0;
+        }
+    }
+}
+
+.accordion{
+    &:not(:last-of-type){
+        border-bottom: 1px solid #E6EAED;
+    }
+    &-container{
+        background: #FFFFFF;
+        border: 1px solid #E6EAED;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+    &__button{
+        font-size: 17px;
+        line-height: 140%;
+        color: #444444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        transition: 200ms ease;
+        column-gap: 18px;
+        padding: 20px;
+        width: 100%;
+        @include media($sm){
+            column-gap: 8px;
+        }
+        &.active{
+            font-weight: bold;
+            font-size: 23px;
+            line-height: 140%;
+            @include media($sm){
+                font-size: 17px;
+                line-height: 140%;
+            }
+        }
+        svg{
+            transition: 200ms ease;
+            min-width: 12px;
+            @include media($sm){
+                min-width: 10px;
+            }
+        }
+        &.active{
+            svg{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    &__content{
+        display: none; 
+        padding: 0 20px 20px 20px;
+        p{
+            font-size: 17px;
+            line-height: 160%;
+            color: #444444;
+        }
+    }
+}
+
+.rating{
+    &__title{
+        &.active{
+            font-weight: bold;
+            font-size: 29px;
+            line-height: 140%;
+            text-align: left;
+            color: #000000;
+            @include media($sm){
+                font-size: 19px;
+                line-height: 27px;
+            }
         }
     }
 }
