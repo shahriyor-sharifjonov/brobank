@@ -617,5 +617,14 @@ mixin main()
                 a(href="#!" target="_blank").author__social-item
                   img(src="@img/youtube.svg", alt="youtube" draggable="false") 
             p.author__desc Высшее экономическое образование Сумского НАУ по специальности "Менеджмент организации". Аналитик банковского сектора и микрофинансового рынка. Опыт работы в профильных коммерческих структурах – и банке, и МФО. Более 5 лет создает полезный контент для потребителей финансовых услуг и организаций - информационно-аналитические статьи по банковскому сектору и микрофинансовому рынку. <a href="mailto:sysoev@brobank.ru">sysoev@brobank.ru</a>
-
-
+      .reviews
+        .reviews__header 
+          h2.reviews__title.section-title Отзывы о кредитных картах
+          a(href="#!").reviews__link.desktop Показать все 
+        .reviews__slider.swiper 
+          .reviews__wrapper.swiper-wrapper  
+            .reviews__item.swiper-slide 
+              .reivews__item-header 
+                img(src="@img/reviews-1.png", alt="" draggable="false").reviews__item-img
+                p Санкт-Петербург Банк
+        a(href="#!").reviews__link.mobile Показать все

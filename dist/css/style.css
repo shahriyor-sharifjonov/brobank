@@ -559,6 +559,10 @@ body {
   padding-bottom: 30px;
 }
 
+.mobile {
+  display: none;
+}
+
 button {
   background: none;
   border: none;
@@ -1495,6 +1499,7 @@ button {
   background: #F5F8FA;
   border-radius: 4px;
   padding: 20px 30px 30px 30px;
+  margin-bottom: 60px;
 }
 
 .author__title {
@@ -1599,6 +1604,66 @@ button {
   line-height: 160%;
   color: #444444;
   text-decoration: none;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 29px;
+  line-height: 41px;
+  color: #000000;
+}
+
+.reviews__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.reviews__link {
+  text-decoration: none;
+}
+
+.reviews__link.desktop {
+  font-size: 15px;
+  line-height: 18px;
+  text-align: right;
+  color: #528CAA;
+}
+
+.reviews__link.mobile {
+  font-size: 15px;
+  line-height: 18px;
+  color: #444444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E6EAED;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 20px;
+  -webkit-transition: 200ms ease;
+  -o-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+.reviews__link.mobile:hover {
+  background: #F5F8FA;
 }
 
 @media (min-width: 575px) {
@@ -1785,6 +1850,20 @@ button {
     line-height: 18px;
   }
 
+  .reviews__header {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
   .info__p {
     font-size: 15px;
     line-height: 160%;
@@ -1823,6 +1902,10 @@ button {
     row-gap: 20px;
   }
 
+  .filter__item {
+    width: calc(50% - 8px);
+  }
+
   .filter__item-label {
     font-size: 13px;
     line-height: 15px;
@@ -1833,6 +1916,10 @@ button {
     font-size: 15px;
     line-height: 18px;
     width: 100%;
+  }
+
+  .products {
+    margin-bottom: 20px;
   }
 
   .products__item {
@@ -1847,16 +1934,6 @@ button {
   .products__item-title a {
     font-size: 17px;
     line-height: 140%;
-  }
-}
-
-@media (max-width: 575px) {
-  .filter__item {
-    width: calc(50% - 8px);
-  }
-
-  .products {
-    margin-bottom: 20px;
   }
 
   .products__item-info {
@@ -1934,6 +2011,7 @@ button {
 
   .author {
     padding: 20px;
+    margin-bottom: 30px;
   }
 
   .author__img {
@@ -1956,6 +2034,11 @@ button {
 
   .author__desc {
     margin-left: -85px;
+  }
+
+  .section-title {
+    font-size: 19px;
+    line-height: 140%;
   }
 }
 
