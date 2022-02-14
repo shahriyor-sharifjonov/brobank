@@ -151,7 +151,7 @@ document.querySelectorAll('.sm-change').forEach(function ( e ) {
 })
 
 document.querySelectorAll('.filter').forEach(function ( ) {
-  const filter = document.querySelector('.filter__content');
+  const filter = document.querySelector('.filter > .filter__content');
   const filterBtn = filter.querySelector('.filter__reset');
   const filterItems = filter.querySelectorAll('.dropdown__list-item');
   const filterDropdown = filter.querySelectorAll('.dropdown__button');
@@ -178,10 +178,22 @@ document.querySelectorAll('.filter').forEach(function ( ) {
   })
 })
 
-document.querySelector('.filter__show').addEventListener('click', function (  ) {
-  document.querySelector('.filter__show').classList.toggle('active');
-  const filter = document.querySelector('.filter__content');
-  filter.classList.toggle('active');
+$(document).ready(function() {
+  $(".filter__show").on("click", function() {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+      $(this)
+        .parent().siblings(".filter__content")
+        .slideUp(200);
+    } else {
+      $(".filter__show").removeClass("active");
+      $(this).addClass("active");
+      $(".filter__content").slideUp(200);
+      $(this)
+        .parent().siblings(".filter__content")
+        .slideDown(200);
+    }
+  })
 })
 
 document.querySelectorAll('.products__item').forEach(function ( el ) {

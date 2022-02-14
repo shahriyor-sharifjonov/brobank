@@ -31,8 +31,18 @@ mixin main()
               p.categories__item-p Онлайн
       .filter
         .filter__buttons
-          button(type='button').filter__show.active 
-            img(src="@img/settings.svg", alt="" draggable="false" width="18px" height="18px").filter__show-img 
+          button(type='button').filter__show.active
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 3H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 3H7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 1V5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 9H8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 9H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 15H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 15H5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 13V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             span.filter__show-text Фильтры
             span.filter__show-badge 3
           .dropdown.filter__dropdown
@@ -45,7 +55,7 @@ mixin main()
               li.dropdown__list-item(data-value="По льготному периоду") По льготному периоду
               li.dropdown__list-item(data-value="По процентной ставке ") По процентной ставке 
             input(type="text" name="select-category" value="").dropdown__input_hidden 
-        .filter__content.active
+        .filter__content.active(style="display: block;") 
           .filter__header
             p.filter__title Фильтры
             button(type="button").filter__reset Сбросить
@@ -836,7 +846,7 @@ mixin main()
             label(for="email") При подписке вы принимаете условия <a href="#!">пользовательского соглашения</a>
         img(src="@img/offer.png", alt="").offer__img 
       .comment 
-        h2.comment__title.title Комментарии: 28
+        h2.comment__title Комментарии: 28
         .comment__main
           .comment__content 
             .comment__item 

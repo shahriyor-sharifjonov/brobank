@@ -206,6 +206,7 @@ button{
 }
 
 .filter{
+    position: relative;
     &__buttons{
         margin-bottom: 20px;
         display: flex;
@@ -216,6 +217,7 @@ button{
         }
     }
     &__show{
+        height: 40px;
         width: 150px;
         display: flex;
         align-items: center;
@@ -226,6 +228,9 @@ button{
         border-radius: 4px;
         padding: 11px 11px;
         transition: 200ms ease;
+        *{
+            pointer-events: none;
+        }
         &:hover{
           background: #F5F8FA;
         }
@@ -235,12 +240,20 @@ button{
                 color: #176EAE;
                 font-weight: bold;
             }
+            svg{
+                path{
+                    stroke: #176EAE;
+                }
+            }
         }
         @include media(470){
             width: 50%;
         }
-        &-img{
+        svg{
             margin-right: 10px;
+            path{
+                stroke: #444;
+            }
         }
         &-text{
             font-size: 15px;
@@ -269,6 +282,18 @@ button{
         }
     }
     &__dropdown{
+        height: 40px;
+        .dropdown__button{
+            height: 100%;
+        }
+        .dropdown__list{
+            min-width: 220px;
+            @include media(576){
+                width: 290px;
+                left: auto;
+                right: 0;
+            }
+        }
         @include media(470){
             width: 50%;
         }
@@ -279,8 +304,7 @@ button{
         box-sizing: border-box;
         box-shadow: 0px 5px 5px rgba(136, 145, 157, 0.1);
         border-radius: 8px;
-        padding: 30px 40px;
-        display: none;
+        padding: 30px 40px 40px 40px;
         margin-bottom: 30px;
         &.active{
             display: block;
@@ -294,9 +318,6 @@ button{
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
-        @include media(390){
-            margin-bottom: 15px;
-        } 
     }
     &__title{
         font-weight: bold;
@@ -326,14 +347,14 @@ button{
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         @include media($sm){
-            column-gap: 15px;
+            column-gap: 20px;
             row-gap: 20px;        
         }   
         @include media(390){
-            row-gap: 10px;
-            margin-bottom: 15px;
+            row-gap: 20px;
+            margin-bottom: 20px;
         } 
     }
     &__item{
@@ -345,11 +366,11 @@ button{
             width: calc(50% - 15px);
         }
         @include media($sm){
-            width: calc(50% - 8px);
+            width: calc(50% - 10px);
         }
         @include media(390){
             width: 100%;
-            row-gap: 5px;
+            row-gap: 10px;
         }
         &-label{
             font-size: 15px;
@@ -360,9 +381,26 @@ button{
                 line-height: 15px;
             }  
         }
+        &-input{
+            @include media($sm){
+                height: 40px;
+            }
+        }
+        &-dropdown{
+            @include media($sm){
+                height: 40px;
+                .dropdown_with-chk__button,
+                .dropdown__button{
+                    height: 40px;
+                }
+            }
+        }
         .dropdown{
             max-width: 100%;
             width: 100%;
+            @include media($sm){
+                height: 40px;
+            }
         }
         .dropdown_with-chk{
             max-width: 100%;
@@ -385,14 +423,21 @@ button{
         text-align: center;
         color: #000000;
         transition: 200ms ease;
-        &:hover{
-            background: #FDCE1B;
+        width: calc(33.333% - 20px);
+        @include media($lg){
+            width: calc(50% - 15px);
+        }
+        @include media(767){
+            width: 100%;
         }
         @include media($sm){
             padding: 16px 20px;
             font-size: 15px;
             line-height: 18px;
-            width: 100%;
+            height: 40px;
+        }
+        &:hover{
+            background: #FDCE1B;
         }
     }
 }
@@ -411,7 +456,7 @@ button{
         box-sizing: border-box;
         box-shadow: 0px 5px 5px rgba(136, 145, 157, 0.1);
         border-radius: 8px;
-        padding: 30px 40px;
+        padding: 30px 40px 40px 40px;
         @include media($sm){
             padding: 20px;
         }
@@ -466,7 +511,7 @@ button{
         &-img{
             min-width: 300px;
             max-width: 300px;
-            margin-right: 15px;
+            margin-right: 30px;
             @include media($lg){
                 min-width: 158px;
                 max-width: 158px;
@@ -556,6 +601,10 @@ button{
             color: #176EAE;   
             text-decoration: none;
             transition: 200ms ease;
+            @include media($sm){
+                font-size: 13px;
+                line-height: 15px;
+            }
             &:hover{
                 color: #0E4268;
             }         
@@ -602,6 +651,10 @@ button{
                 border-radius: 12px;
                 text-decoration: none;
                 transition: 200ms ease;
+                @include media($sm){
+                    font-size: 11px;
+                    line-height: 13px;
+                }
                 &:hover{
                     background: #E6EAED;
                 }
@@ -638,6 +691,12 @@ button{
                 line-height: 18px;
                 padding: 11px 10px;
                 min-width: 42px;
+                max-width: 95px;
+                height: 40px;
+                &:last-child{
+                    max-width: 40px;
+                    min-width: 40px;
+                }
             }
             &:hover{
                 background: #F5F8FA;
@@ -673,6 +732,10 @@ button{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                @include media($sm){
+                    font-size: 11px;
+                    line-height: 160%;
+                }
             }
         }
         &-expand{
@@ -1026,7 +1089,7 @@ button{
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
-        @include media(576){
+        @include media($sm){
             margin-bottom: 15px;
         }
     }
@@ -1342,8 +1405,20 @@ button{
 
 .comment{
     margin-bottom: 40px;
-    @include media(576){
+    @include media($sm){
         margin-bottom: 30px;
+    }
+    &__title{
+        font-weight: bold;
+        font-size: 29px;
+        line-height: 41px;
+        margin-bottom: 30px;
+        @include media($sm){
+            font-weight: bold;
+            font-size: 19px;
+            line-height: 120%;
+            margin-bottom: 15px;
+        }
     }
     &__main{
         display: flex;
@@ -1356,6 +1431,9 @@ button{
         display: flex;
         flex-direction: column;
         row-gap: 30px;
+        @include media($sm){
+            row-gap: 20px;
+        }
     }
     &__item{
         background: #FFFFFF;
@@ -1382,6 +1460,10 @@ button{
             height: 40px;
             border-radius: 4px;
             margin-right: 10px;
+            @include media($sm){
+                width: 30px;
+                height: 30px;
+            }
         }
         &-author{
             font-weight: bold;
@@ -1390,7 +1472,10 @@ button{
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            color: #444444;            
+            color: #444444; 
+            @include media($sm){
+                font-size: 13px;
+            }           
             img{
                 margin-left: 5px;
                 width: 16px;
@@ -1407,13 +1492,20 @@ button{
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            column-gap: 10px;         
+            column-gap: 10px; 
+            @include media($sm){
+                font-size: 13px;
+            }         
         }
         &-content{
             font-size: 15px;
             line-height: 21px;
             margin-bottom: 10px;
             color: #444444;
+            @include media($sm){
+                font-size: 13px;
+                line-height: 18px;                
+            }
         }
     }
     &__subitem{
@@ -1422,6 +1514,9 @@ button{
         padding: 20px;
         transition: 200ms ease;
         margin-left: 20px;
+        @include media($sm){
+            margin-left: 0;
+        }
         &.admin{
             background: #F5F8FA;
             border: none;
@@ -1450,6 +1545,7 @@ button{
             display: none;
         }
         &-item{
+            height: 50px;
             padding: 10px 0;
             box-shadow: 0px 1px 0px 0px #E6EAED;
             font-size: 15px;
@@ -1459,6 +1555,7 @@ button{
             color: #444444;
         }
         &-more{
+            height: 50px;
             font-size: 15px;
             line-height: 18px;
             display: flex;
