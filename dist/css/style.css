@@ -2755,6 +2755,12 @@ button {
     left: auto;
     right: 0;
   }
+
+  .products__item-category__btn {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+  }
 }
 
 @media (max-width: 575px) {

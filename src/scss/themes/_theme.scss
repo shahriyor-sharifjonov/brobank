@@ -496,6 +496,13 @@ button{
             }
         }
         &-category{
+            &__btn{
+                @include media(576){
+                    font-weight: 500;
+                    font-size: 11px;
+                    line-height: 13px;
+                }
+            }
             &.desktop{
                 @include media($md){
                     display: none;
